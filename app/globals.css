@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Font setup dari next/font */
+:root {
+  --font-crimson: var(--font-crimson), serif;
+  --font-inter: var(--font-inter), sans-serif;
+
+  --color-light-hover: #fcf4ff;
+  --color-dark-hover: #2a004a;
+  --color-dark-theme: #11001f;
+}
+
+/* Default font (body) */
+html {
+  font-family: var(--font-crimson);
+}
