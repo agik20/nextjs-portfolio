@@ -1,24 +1,17 @@
 @import "tailwindcss";
 
-/* Font setup dari next/font */
-:root {
-  --font-crimson: 'Crimson Text', serif;
-  --font-inter: 'Inter', sans-serif;
+@theme {
+  --color-light-hover: #fcf4ff;
+  --color-dark-hover: #2a004a;
+
+  --font-crimson: "Crimson Text", serif;
+  --font-inter: "Inter", sans-serif;
+
+  --shadow-black: 4px 4px 0 #000;
+  --shadow-white: 4px 4px 0 #fff;
 }
 
-/* Default font (body) */
-html {
-  font-family: var(--font-crimson);
+@utility grid-cols-auto {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-
-/* Custom fonts dari next/font */
-.font-crimson {
-  font-family: var(--font-crimson);
-}
-
-.font-inter {
-  font-family: var(--font-inter);
-}
-
-
 

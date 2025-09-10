@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"; // remove ReactNode from here
+import type { ReactNode } from "react";          // <-- correct import
 import { Crimson_Text, Inter } from "next/font/google";
 import "./globals.css";
 
-// Body text (serif, pengganti Charter)
 const crimson = Crimson_Text({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-crimson",
 });
 
-// Heading/UI (sans, pengganti Kievit/Lato-ish)
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -17,21 +16,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "My Medium-ish Website",
-  description: "Next.js with Medium-inspired typography",
+  title: "Heimy's Portfolio",
+  description: "",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html
-      lang="en"
-      className={`${crimson.variable} ${inter.variable} scroll-smooth antialiased leading-8 overflow-x-hidden`}
-    >
-      <body>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} ${crimson.className} antialiased leading-8 overflow-x-hidden`}>
         {children}
       </body>
     </html>
