@@ -18,8 +18,8 @@ const Footer = () => {
         <p>ⓒ 2025 Ardutra Agi Ginting. ALl rights reserved.</p>
         <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0'>
             <li><a target='_blank' href="https://www.instagram.com/ar.giii">Instagram</a></li>
-            <li><a target='_blank' href="https://www.instagram.com/ar.giii">Github</a></li>
-            <li><a target='_blank' href="https://www.instagram.com/ar.giii">Linkedin</a></li>
+            <li><a target='_blank' href="https://github.com/agik20">Github</a></li>
+            <li><a target='_blank' href="www.linkedin.com/in/ardutra-agi-ginting-56216b316">Linkedin</a></li>
         </ul>
       </div>
     </div>

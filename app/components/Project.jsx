@@ -24,7 +24,7 @@ const Project = () => {
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
         transition={{delay: 0.7, duration: 0.5}}          
-        className='text-center max-w-2xl mx-auto mt-5 mb-12 font-crimson'>I specialize in data science, from cleaning and analyzing data to building and tuning machine learning models. I focus on turning raw data into clear insights and deployable solutions that solve real problems and support intelligent decision-making.</motion.p>
+        className='text-center max-w-2xl mx-auto mt-5 mb-12 font-crimson'>Below are some of the projects I've worked on. These projects include both individual and group projects. Some were for competitions, college assignments, and independent projects.</motion.p>
 
         <motion.div 
         initial={{opacity: 0}}
@@ -42,7 +42,6 @@ const Project = () => {
                             <p className='text-sm text-gray-700'>{project.description}</p>
                         </div>
                         <div className='border rounded-full border-black w-7 aspect-square items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition'>
-                            <Image src={assets.send_icon} alt='send icon' className='w-5'></Image>
                         </div>                        
                     </div>
                 </motion.div>
