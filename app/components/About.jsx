@@ -1,16 +1,7 @@
+import { assets, infoList, toolsData, tool } from '@/assets/assets'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
-
-// Data tools (gantilah dengan data aktual Anda)
-const toolsData = [
-  { name: 'Python', icon: '/python-icon.svg' },
-  { name: 'TensorFlow', icon: '/tensorflow-icon.svg' },
-  { name: 'PyTorch', icon: '/pytorch-icon.svg' },
-  { name: 'OpenCV', icon: '/opencv-icon.svg' },
-  { name: 'React', icon: '/react-icon.svg' },
-  { name: 'NextJS', icon: '/nextjs-icon.svg' },
-];
 
 const About = () => {
   return (
@@ -32,7 +23,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <motion.span 
-            className="text-sm font-medium text-blue-600 tracking-wider uppercase mb-3 block"
+            className="text-sm font-medium text-mid tracking-wider uppercase mb-3 block"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -40,7 +31,7 @@ const About = () => {
             Professional Profile
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-5"
+            className="text-4xl md:text-5xl font-serif font-normal text-darkest mb-5"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -48,7 +39,7 @@ const About = () => {
             About Me
           </motion.h2>
           <motion.div 
-            className="w-16 h-0.5 bg-blue-600 mx-auto"
+            className="w-16 h-0.5 bg-mid mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -64,7 +55,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <motion.h3 
-              className="font-serif text-2xl md:text-3xl text-gray-900 mb-12 relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-blue-600"
+              className="font-serif text-2xl md:text-3xl text-darkest mb-12 relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-mid"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -72,7 +63,7 @@ const About = () => {
               Education
             </motion.h3>
 
-            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-gray-200">
+            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-lightest">
               {/* Education Item 1 */}
               <motion.div 
                 className="relative mb-12"
@@ -81,9 +72,9 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div className="absolute -left-10 top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-md"></div>
-                <time className="text-xs font-medium text-blue-600 tracking-wide mb-2 block">2018 - 2021</time>
-                <h4 className="text-lg font-semibold text-gray-900 mb-1">State Senior High School 1 Berastagi</h4>
+                <div className="absolute -left-10 top-1 w-4 h-4 rounded-full bg-mid border-4 border-white shadow-md"></div>
+                <time className="text-xs font-medium text-mid tracking-wide mb-2 block">2018 - 2021</time>
+                <h4 className="text-lg font-semibold text-darkest mb-1">State Senior High School 1 Berastagi</h4>
                 <p className="text-gray-600 text-sm">Mathematics and Natural Science</p>
                 <p className="text-gray-500 text-xs mt-2">High School Diploma</p>
               </motion.div>
@@ -96,9 +87,9 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="absolute -left-10 top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-md"></div>
-                <time className="text-xs font-medium text-blue-600 tracking-wide mb-2 block">2021 - 2025</time>
-                <h4 className="text-lg font-semibold text-gray-900 mb-1">Islamic University of Indonesia</h4>
+                <div className="absolute -left-10 top-1 w-4 h-4 rounded-full bg-mid border-4 border-white shadow-md"></div>
+                <time className="text-xs font-medium text-mid tracking-wide mb-2 block">2021 - 2025</time>
+                <h4 className="text-lg font-semibold text-darkest mb-1">Islamic University of Indonesia</h4>
                 <p className="text-gray-600 text-sm">Electrical Engineering Technologies</p>
                 <p className="text-gray-500 text-xs mt-2">Bachelor of Engineering – BE</p>
               </motion.div>
@@ -127,41 +118,26 @@ const About = () => {
               </p>
 
               <motion.h4 
-                className="font-serif text-xl text-gray-900 mb-8 mt-12 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-blue-600"
+                className="font-serif text-xl text-darkest mb-8 mt-12 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-mid"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 Technical Toolkit
               </motion.h4>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="grid grid-cols-4 sm:grid-cols-6 gap-4"
-              >
-                {toolsData.map((tool, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex flex-col items-center justify-center p-3 bg-gray-50 rounded-lg border border-gray-100 hover:border-blue-200 transition-colors duration-300 group"
-                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-8 h-8 relative mb-2 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-medium text-gray-700">
-                        {tool.name.charAt(0)}
-                      </div>
-                    </div>
-                    <span className="text-xs text-gray-500 group-hover:text-blue-600 transition-colors duration-300 text-center">
-                      {tool.name}
-                    </span>
-                  </motion.div>
+              <motion.ul 
+              initial={{opacity: 0}}
+              whileInView={{opacity: 1}}
+              transition={{duration: 0.6, delay: 1.5}}                  
+              className='flex items-center gap-3 sm:gap-5'>
+                {toolsData.map((tool, index)=>(
+                  <motion.li 
+                  whileHover={{scale: 1}}
+                  className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500' key={index}>
+                    <Image src={tool} alt='Tool' className='w-5 sm:w-7'></Image>
+                  </motion.li>
                 ))}
-              </motion.div>
+              </motion.ul>
             </motion.div>
           </motion.div>
         </div>

@@ -57,7 +57,7 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <motion.span 
-            className="text-sm font-medium text-blue-600 tracking-wider uppercase mb-3 block"
+            className="text-sm font-medium text-mid tracking-wider uppercase mb-3 block"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -65,7 +65,7 @@ const Contact = () => {
             Let's Connect
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-5"
+            className="text-4xl md:text-5xl font-serif font-normal text-darkest mb-5"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -73,7 +73,7 @@ const Contact = () => {
             Get in Touch
           </motion.h2>
           <motion.div 
-            className="w-16 h-0.5 bg-blue-600 mx-auto"
+            className="w-16 h-0.5 bg-mid mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -162,7 +162,7 @@ const Contact = () => {
           >
             <motion.button 
               type="submit" 
-              className="py-4 px-10 bg-blue-600 text-white rounded-full font-medium flex items-center justify-center gap-2 mx-auto hover:bg-blue-700 transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="py-4 px-10 bg-dark/90 text-white rounded-full font-medium flex items-center justify-center gap-2 mx-auto hover:bg-dark transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               whileHover={{ scale: isSubmitting ? 1 : 1.03 }}
               whileTap={{ scale: 0.98 }}
               disabled={isSubmitting}
@@ -187,7 +187,7 @@ const Contact = () => {
 
             {result && (
               <motion.p 
-                className={`mt-6 text-sm font-medium ${result.includes("successfully") ? "text-green-600" : "text-blue-600"}`}
+                className={`mt-6 text-sm font-medium ${result.includes("successfully") ? "text-green-600" : "text-mid"}`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}

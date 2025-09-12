@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-pastel-gray: #ccd0cf;
-  --color-cadet-gray: #b9c4c6;
-  --color-deep-space: #4a5c6a;
-  --color-charcoal: #253745;
-  --color-gunmetal: #11212d;  
-  --color-rich-black: #06141b;    
+  --color-lightest: #92a4b1;
+  --color-light: #5a7480;
+  --color-mid: #3c5665;
+  --color-dark: #29343d;
+  --color-darkest: #1e2025;  
 
   --font-crimson: "Crimson Text", serif;
   --font-inter: "Inter", sans-serif;

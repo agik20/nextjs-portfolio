@@ -89,21 +89,25 @@ export const workData = [
         title: 'Real-Time Detection of Cheating Activities in Written Exams Based on Deep Learning',
         description: 'Aug 2024 - Jul 2025',
         bgImage: '/work-1.png',
+        link: 'https://github.com/agik20/Exam-Cheating'
     },
     {
         title: 'Criminal Suspect Localization Using CCTV-Based Face Recognition and Object Detection',
         description: 'Aug 2025 - Aug 2025',
         bgImage: '/work-2.png',
+        link: 'https://github.com/agik20/yolov10-facenet-surveillance'
     },
     {
         title: 'California Housing Prices – Machine Learning Mini Project',
         description: 'Aug 2025 - Present',
         bgImage: '/work-3.png',
+        link: 'https://github.com/agik20/californiahousingprices'
     },
     {
         title: 'UI/UX Portfolio Design',
         description: 'Aug 2025 - Sep 2025',
         bgImage: '/work-4.png',
+        link: 'https://github.com/agik20/nextjs-portfolio'
     },
 ]
 
@@ -114,12 +118,26 @@ export const serviceData = [
     { icon: assets.graphics_icon, title: 'Data Engineering & MLOps', description: 'Capable of handling pipelines, deployment, and cloud-based workflows for production-ready AI.', link: '' },
 ]
 
-export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Skills', description: 'Python, SQL, HTML, CSS, JavaScript, React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'Bachelor of Engineering – BE, Electrical, Electronics and Communications Engineering' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
-];
-
 export const toolsData = [
     assets.vscode, assets.jupyter, assets.git, assets.github, assets.anaconda, assets.docker, assets.tableau, assets.tensorflow
+];
+
+export const currentYear = new Date().getFullYear()
+
+export const socialLinks = [
+{
+    name: 'Instagram',
+    url: 'https://www.instagram.com/ar.giii',
+    icon: assets.instagram
+},
+{
+    name: 'Github',
+    url: 'https://github.com/agik20',
+    icon: assets.github
+},
+{
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/ardutra-agi-ginting-56216b316',
+    icon: assets.linkedin
+}
 ];

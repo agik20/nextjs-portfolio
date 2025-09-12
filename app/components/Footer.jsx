@@ -1,28 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import { assets } from '@/assets/assets'
+import { assets, currentYear, socialLinks } from '@/assets/assets'
 import { motion } from 'framer-motion'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
-  
-  const socialLinks = [
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/ar.giii',
-      icon: assets.instagram_icon // Anda perlu menambahkan ini ke assets
-    },
-    {
-      name: 'Github',
-      url: 'https://github.com/agik20',
-      icon: assets.github_icon // Anda perlu menambahkan ini ke assets
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/ardutra-agi-ginting-56216b316',
-      icon: assets.linkedin_icon // Anda perlu menambahkan ini ke assets
-    }
-  ]
 
   return (
     <footer className='mt-32 bg-gradient-to-b from-white to-gray-50 pt-16 pb-8 px-4'>

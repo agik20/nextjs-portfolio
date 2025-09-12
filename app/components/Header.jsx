@@ -61,7 +61,7 @@ const Header = () => {
           initial={{ backgroundPositionX: '100%' }}
           animate={{ backgroundPositionX: '0%' }}
           transition={{ duration: 1.5, delay: 1, repeat: Infinity, repeatType: 'reverse' }}
-          className='bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-[length:200%_auto]'
+          className='bg-clip-text text-transparent bg-gradient-to-r from-dark to-light bg-[length:200%_auto]'
         >
           Enthusiast
         </motion.span>

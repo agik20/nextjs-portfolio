@@ -23,7 +23,7 @@ const Skills = () => {
           viewport={{ once: true }}
         >
           <motion.span 
-            className="text-sm font-medium text-blue-600 tracking-wider uppercase mb-3 block"
+            className="text-sm font-medium text-mid tracking-wider uppercase mb-3 block"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -31,7 +31,7 @@ const Skills = () => {
             Technical Abilities
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-5"
+            className="text-4xl md:text-5xl font-serif font-normal text-darkest mb-5"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -39,7 +39,7 @@ const Skills = () => {
             My Expertise
           </motion.h2>
           <motion.div 
-            className="w-16 h-0.5 bg-blue-600 mx-auto"
+            className="w-16 h-0.5 bg-mid mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -58,7 +58,7 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -80,13 +80,13 @@ const Skills = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{title}</h3>
+              <h3 className="text-xl font-semibold text-darkest mb-4">{title}</h3>
               
               <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{description}</p>
               
               <a 
                 href={link} 
-                className="flex items-center gap-2 text-blue-600 font-medium text-sm mt-auto group"
+                className="flex items-center gap-2 text-mid font-medium text-sm mt-auto group"
               >
                 Read more
                 <motion.span

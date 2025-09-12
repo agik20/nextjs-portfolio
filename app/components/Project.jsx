@@ -23,7 +23,7 @@ const Project = () => {
           viewport={{ once: true }}
         >
           <motion.span 
-            className="text-sm font-medium text-blue-600 tracking-wider uppercase mb-3 block"
+            className="text-sm font-medium text-mid tracking-wider uppercase mb-3 block"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -31,7 +31,7 @@ const Project = () => {
             Portfolio Showcase
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-5"
+            className="text-4xl md:text-5xl font-serif font-normal text-darkest mb-5"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -39,7 +39,7 @@ const Project = () => {
             My Latest Work
           </motion.h2>
           <motion.div 
-            className="w-16 h-0.5 bg-blue-600 mx-auto"
+            className="w-16 h-0.5 bg-mid mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -58,7 +58,7 @@ const Project = () => {
 
         {/* Projects Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -88,25 +88,19 @@ const Project = () => {
                   <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
                     <p className="text-sm text-gray-200">{project.description}</p>
+
+                    <div className="flex items-center justify-between mt-4">
+                      <span className="text-xs text-white">{project.category || "Project"}</span>
+                      <motion.div 
+                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center shadow-sm group-hover:bg-mid group-hover:border-mid transition-colors duration-300"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </motion.div>
+                    </div>                    
                   </div>
-                </div>
-              </div>
-              
-              {/* Content Card */}
-              <div className="bg-white rounded-lg shadow-sm p-5 mt-4 border border-gray-100">
-                <h3 className="font-semibold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-600 line-clamp-2">{project.description}</p>
-                
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-xs text-gray-500">{project.category || "Project"}</span>
-                  <motion.div 
-                    className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center shadow-sm group-hover:bg-blue-600 group-hover:border-blue-600 transition-colors duration-300"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -122,7 +116,7 @@ const Project = () => {
           viewport={{ once: true }}
         >
           <motion.a 
-            href="#"
+            href="https://github.com/agik20"
             className="flex items-center gap-2 text-gray-700 border border-gray-300 rounded-full px-6 py-3 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
