@@ -1,50 +1,109 @@
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { assets, serviceData } from '@/assets/assets'
-import { motion, scale } from 'motion/react'
 
 const Skills = () => {
   return (
-    <motion.div 
-    initial={{opacity: 0}}
-    whileInView={{opacity: 1}}
-    transition={{duration: 1}}
-    id="skills" className='w-full px-[12%] py-10 scroll-mt-20'>
-      <motion.h4 
-      initial={{y: -20, opacity: 0}}
-      whileInView={{y: 0, opacity: 1}}
-      transition={{delay: 0.3, duration: 0.5}}      
-      className='text-center mb-2 text-lg font-crimson'>Skills</motion.h4>
-      <motion.h2 
-      initial={{y: -20, opacity: 0}}
-      whileInView={{y: 0, opacity: 1}}
-      transition={{delay: 0.3, duration: 0.5}}       
-      className='text-center text-5xl font-crimson'>My Expertise</motion.h2>
-      <motion.p 
-      initial={{opacity: 0}}
-      whileInView={{opacity: 1}}
-      transition={{delay: 0.7, duration: 0.5}}        
-      className='text-center max-w-2xl mx-auto mt-5 mb-12 font-crimson'>I specialize in data science, from cleaning and analyzing data to building and tuning machine learning models. I focus on turning raw data into clear insights and deployable solutions that solve real problems and support intelligent decision-making.</motion.p>
+    <motion.section 
+      id="skills" 
+      className="w-full px-6 md:px-12 lg:px-16 py-16 md:py-24 scroll-mt-20 bg-gray-50"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px" }}
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <motion.header 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <motion.span 
+            className="text-sm font-medium text-blue-600 tracking-wider uppercase mb-3 block"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Technical Abilities
+          </motion.span>
+          <motion.h2 
+            className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-5"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            My Expertise
+          </motion.h2>
+          <motion.div 
+            className="w-16 h-0.5 bg-blue-600 mx-auto"
+            initial={{ width: 0 }}
+            whileInView={{ width: 64 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          />
+        </motion.header>
 
-      <motion.div 
-      initial={{opacity: 0}}
-      whileInView={{opacity: 1}}
-      transition={{delay: 0.9, duration: 0.6}}       
-      className='grid grid-cols-auto gap-6 my-10'>
-        {serviceData.map(({icon, title, description, link}, index)=>(
+        <motion.p 
+          className="text-center max-w-3xl mx-auto mt-5 mb-16 text-gray-700 leading-relaxed font-light"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          I specialize in the complete data science pipeline, from meticulous data cleaning and exploratory analysis to building, tuning, and deploying machine learning models. My focus is on transforming raw data into actionable insights and production-ready solutions that address real-world challenges and enable data-driven decision-making.
+        </motion.p>
+
+        {/* Skills Grid */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {serviceData.map(({icon, title, description, link}, index) => (
             <motion.div 
-            whileInView={{scale: 1}}           
-            key={index} className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500'>
-                <Image src={icon} alt='' className='w-10'></Image>
-                <h3 className='text-lg my-4 text-gray-700'>{title}</h3>
-                <p className='text-sm text-gray-600 leading-5'>{description}</p>
-                <a href={link} className='flex items-center gap-2 text-sm mt-5'>
-                    Read more <Image src={assets.right_arrow} alt='' className='w-4'></Image>
-                </a>
+              key={index}
+              className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-14 h-14 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                <div className="w-8 h-8 relative">
+                  <Image src={icon} alt={title} fill className="object-contain" />
+                </div>
+              </div>
+              
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{title}</h3>
+              
+              <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{description}</p>
+              
+              <a 
+                href={link} 
+                className="flex items-center gap-2 text-blue-600 font-medium text-sm mt-auto group"
+              >
+                Read more
+                <motion.span
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </motion.span>
+              </a>
             </motion.div>
-        ))}
-      </motion.div>
-    </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </motion.section>
   )
 }
 

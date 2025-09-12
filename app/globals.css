@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-light-hover: #fcf4ff;
-  --color-dark-hover: #2a004a;
+  --color-pastel-gray: #ccd0cf;
+  --color-cadet-gray: #b9c4c6;
+  --color-deep-space: #4a5c6a;
+  --color-charcoal: #253745;
+  --color-gunmetal: #11212d;  
+  --color-rich-black: #06141b;    
 
   --font-crimson: "Crimson Text", serif;
   --font-inter: "Inter", sans-serif;
 
-  --shadow-black: 4px 4px 0 #000;
-  --shadow-white: 4px 4px 0 #fff;
+  --shadow-black: 4px 4px 0 #06141b;
 }
 
 @utility grid-cols-auto {
