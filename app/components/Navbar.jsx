@@ -39,12 +39,12 @@ const Navbar = () => {
 
   const openMobileMenu = () => {
     setIsMobileMenuOpen(true)
-    document.body.style.overflow = 'hidden' // Prevent scrolling when menu is open
+    document.body.style.overflow = 'hidden'
   }
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
-    document.body.style.overflow = 'auto' // Re-enable scrolling
+    document.body.style.overflow = 'auto'
   }
 
   const navItems = [
@@ -90,6 +90,7 @@ const Navbar = () => {
               className="relative px-4 py-2 font-medium text-gray-700 hover:text-gray-900 transition-colors"
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
+              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
               {item.name}
               <motion.span 
@@ -111,6 +112,7 @@ const Navbar = () => {
               boxShadow: "0 5px 15px rgba(0,0,0,0.1)"
             }}
             whileTap={{ scale: 0.98 }}
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             Contact
             <motion.div
@@ -181,6 +183,7 @@ const Navbar = () => {
                           href={item.href} 
                           className="block py-3 text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors"
                           onClick={closeMobileMenu}
+                          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
                         >
                           {item.name}
                         </a>
@@ -195,6 +198,7 @@ const Navbar = () => {
                     className="flex items-center justify-center gap-2 w-full py-3 bg-gray-900 text-white rounded-lg font-medium shadow-md"
                     whileTap={{ scale: 0.98 }}
                     onClick={closeMobileMenu}
+                    style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
                   >
                     Contact Me
                     <Image src={assets.arrow_icon} alt="Arrow icon" className="w-3 filter invert" />

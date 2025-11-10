@@ -7,13 +7,17 @@
   --color-dark: #29343d;
   --color-darkest: #1e2025;  
 
-  --font-crimson: "Crimson Text", serif;
-  --font-inter: "Inter", sans-serif;
-
+  /* Gunakan font Helvetica dari CDN */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
   --shadow-black: 4px 4px 0 #06141b;
+}
+
+/* Pastikan font Helvetica digunakan */
+body {
+  font-family: "Helvetica Neue", var(--font-sans);
 }
 
 @utility grid-cols-auto {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-

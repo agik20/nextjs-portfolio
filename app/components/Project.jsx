@@ -27,14 +27,16 @@ const Project = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             Portfolio Showcase
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-serif font-normal text-darkest mb-5"
+            className="text-4xl md:text-5xl font-normal text-darkest mb-5"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             My Latest Work
           </motion.h2>
@@ -52,6 +54,7 @@ const Project = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
+          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
         >
           Explore a selection of my recent projects, ranging from academic assignments and competition entries to independent initiatives. Each project demonstrates my approach to problem-solving, technical execution, and attention to detail.
         </motion.p>
@@ -86,11 +89,11 @@ const Project = () => {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                   <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
-                    <p className="text-sm text-gray-200">{project.description}</p>
+                    <h3 className="font-semibold text-lg mb-2" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{project.title}</h3>
+                    <p className="text-sm text-gray-200" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{project.description}</p>
 
                     <div className="flex items-center justify-between mt-4">
-                      <span className="text-xs text-white">{project.category || "Project"}</span>
+                      <span className="text-xs text-white" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{project.category || "Project"}</span>
                       <motion.div 
                         className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center shadow-sm group-hover:bg-mid group-hover:border-mid transition-colors duration-300"
                         whileHover={{ scale: 1.1 }}
@@ -120,6 +123,7 @@ const Project = () => {
             className="flex items-center gap-2 text-gray-700 border border-gray-300 rounded-full px-6 py-3 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             <span className="text-sm font-medium">View Full Portfolio</span>
             <motion.span

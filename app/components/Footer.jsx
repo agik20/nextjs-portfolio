@@ -4,7 +4,6 @@ import { assets, currentYear, socialLinks } from '@/assets/assets'
 import { motion } from 'framer-motion'
 
 const Footer = () => {
-
   return (
     <footer className='mt-32 bg-gradient-to-b from-white to-gray-50 pt-16 pb-8 px-4'>
       <div className='max-w-6xl mx-auto'>
@@ -34,7 +33,7 @@ const Footer = () => {
             <div className='w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full'>
               <Image src={assets.mail_icon} alt='Email icon' className='w-4' />
             </div>
-            <span className='text-gray-700 font-medium'>ardutraa40@gmail.com</span>
+            <span className='text-gray-700 font-medium' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>ardutraa40@gmail.com</span>
           </motion.div>
 
           {/* Call to action */}
@@ -45,7 +44,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className='mt-10'
           >
-            <h3 className='text-xl font-light text-gray-600 mb-6'>
+            <h3 className='text-xl font-light text-gray-600 mb-6' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
               Let's build something amazing together
             </h3>
             <motion.a
@@ -53,6 +52,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300'
+              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
               Get In Touch
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -70,7 +70,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className='text-gray-500 text-sm mb-4 md:mb-0'>
+          <p className='text-gray-500 text-sm mb-4 md:mb-0' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
             © {currentYear} Ardutra Agi Ginting. All rights reserved.
           </p>
           
@@ -92,12 +92,11 @@ const Footer = () => {
                 className='text-gray-600 hover:text-gray-900 transition-colors duration-300 flex flex-col items-center'
               >
                 <div className='w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mb-1'>
-                  {/* Replace with actual icon if available */}
-                  <span className='font-semibold text-sm'>
+                  <span className='font-semibold text-sm' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                     {link.name.charAt(0)}
                   </span>
                 </div>
-                <span className='text-xs'>{link.name}</span>
+                <span className='text-xs' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{link.name}</span>
               </motion.a>
             ))}
           </div>

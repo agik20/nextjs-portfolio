@@ -43,11 +43,13 @@ const Skills = () => {
         >
           <motion.span 
             className="text-sm font-medium text-mid tracking-wider uppercase mb-3 block"
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             Technical Abilities
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-serif font-normal text-darkest mb-5"
+            className="text-4xl md:text-5xl font-normal text-darkest mb-5"
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             My Expertise
           </motion.h2>
@@ -61,6 +63,7 @@ const Skills = () => {
 
         <motion.p 
           className="text-center max-w-3xl mx-auto mt-5 mb-16 text-gray-700 leading-relaxed font-light"
+          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
         >
           I specialize in the complete data science pipeline, from meticulous data cleaning and exploratory analysis to building, tuning, and deploying machine learning models. My focus is on transforming raw data into actionable insights and production-ready solutions that address real-world challenges and enable data-driven decision-making.
         </motion.p>
@@ -85,12 +88,13 @@ const Skills = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-semibold text-darkest mb-4">{title}</h3>
-              <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{description}</p>
+              <h3 className="text-xl font-semibold text-darkest mb-4" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{title}</h3>
+              <p className="text-gray-600 mb-6 flex-grow leading-relaxed" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{description}</p>
               
               <button
                 onClick={() => setSelectedService({ title, description, professionalDetails })}
                 className="flex items-center gap-2 text-mid font-medium text-sm mt-auto group"
+                style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
               >
                 View Professional Details
                 <motion.span
@@ -127,7 +131,7 @@ const Skills = () => {
               >
                 <div className="p-8">
                   <div className="flex justify-between items-start mb-6">
-                    <h3 className="text-2xl font-semibold text-darkest">
+                    <h3 className="text-2xl font-semibold text-darkest" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                       {selectedService.title}
                     </h3>
                     <button
@@ -143,34 +147,34 @@ const Skills = () => {
                   <div className="space-y-6">
                     {/* Overview Section */}
                     <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Overview</h4>
-                      <p className="text-gray-700 leading-relaxed">
+                      <h4 className="text-lg font-medium text-darkest mb-3" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Overview</h4>
+                      <p className="text-gray-700 leading-relaxed" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                         {selectedService.description}
                       </p>
                     </div>
 
                     {/* Business Value Section */}
                     <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Business Value</h4>
-                      <p className="text-gray-700 leading-relaxed">
+                      <h4 className="text-lg font-medium text-darkest mb-3" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Business Value</h4>
+                      <p className="text-gray-700 leading-relaxed" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                         {selectedService.professionalDetails.businessValue}
                       </p>
                     </div>
 
                     {/* Collaboration & Teamwork */}
                     <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Collaboration & Teamwork</h4>
-                      <p className="text-gray-700 leading-relaxed">
+                      <h4 className="text-lg font-medium text-darkest mb-3" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Collaboration & Teamwork</h4>
+                      <p className="text-gray-700 leading-relaxed" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                         {selectedService.professionalDetails.collaboration}
                       </p>
                     </div>
 
                     {/* Key Achievements */}
                     <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Key Achievements</h4>
+                      <h4 className="text-lg font-medium text-darkest mb-3" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Key Achievements</h4>
                       <ul className="space-y-2">
                         {selectedService.professionalDetails.keyAchievements.map((achievement, index) => (
-                          <li key={index} className="flex items-start gap-3 text-gray-700">
+                          <li key={index} className="flex items-start gap-3 text-gray-700" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                             <span className="w-2 h-2 bg-mid rounded-full mt-2 flex-shrink-0"></span>
                             {achievement}
                           </li>
@@ -180,12 +184,13 @@ const Skills = () => {
 
                     {/* Tools & Technologies */}
                     <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Core Technologies</h4>
+                      <h4 className="text-lg font-medium text-darkest mb-3" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Core Technologies</h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedService.professionalDetails.toolsTechnologies.map((tool, index) => (
                           <span 
                             key={index}
                             className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
                           >
                             {tool}
                           </span>
@@ -195,8 +200,8 @@ const Skills = () => {
 
                     {/* Professional Impact */}
                     <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="text-lg font-medium text-darkest mb-2">Professional Impact</h4>
-                      <p className="text-gray-700 text-sm">
+                      <h4 className="text-lg font-medium text-darkest mb-2" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Professional Impact</h4>
+                      <p className="text-gray-700 text-sm" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                         This expertise enables me to deliver robust, scalable solutions that align with business objectives 
                         and drive measurable results through effective collaboration and technical excellence.
                       </p>

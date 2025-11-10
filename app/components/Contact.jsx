@@ -61,14 +61,16 @@ const Contact = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             Let's Connect
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-serif font-normal text-darkest mb-5"
+            className="text-4xl md:text-5xl font-normal text-darkest mb-5"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             Get in Touch
           </motion.h2>
@@ -86,6 +88,7 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
+          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
         >
           I'm always interested in new opportunities and collaborations. Whether you have a project in mind or just want to say hello, feel free to reach out—I'll do my best to get back to you promptly.
         </motion.p>
@@ -106,7 +109,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               viewport={{ once: true }}
             >
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Name</label>
               <input 
                 type="text" 
                 id="name"
@@ -114,6 +117,7 @@ const Contact = () => {
                 required 
                 className="w-full p-4 outline-none border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 name="name"
+                style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
               />
             </motion.div>
 
@@ -123,7 +127,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Email</label>
               <input 
                 type="email" 
                 id="email"
@@ -131,6 +135,7 @@ const Contact = () => {
                 required 
                 className="w-full p-4 outline-none border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 name="email"
+                style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
               />
             </motion.div>
           </div>
@@ -142,7 +147,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="mb-6"
           >
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Message</label>
             <textarea 
               id="message"
               rows={6} 
@@ -150,6 +155,7 @@ const Contact = () => {
               required 
               className="w-full p-4 outline-none border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
               name="message"
+              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             ></textarea>
           </motion.div>
 
@@ -166,6 +172,7 @@ const Contact = () => {
               whileHover={{ scale: isSubmitting ? 1 : 1.03 }}
               whileTap={{ scale: 0.98 }}
               disabled={isSubmitting}
+              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
               {isSubmitting ? (
                 <>
@@ -191,6 +198,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
+                style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
               >
                 {result}
               </motion.p>

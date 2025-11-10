@@ -40,7 +40,8 @@ const Header = () => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className='flex items-center justify-center gap-2 text-xl md:text-2xl mb-2 font-crimson text-gray-600'
+        className='flex items-center justify-center gap-2 text-xl md:text-2xl mb-2 text-gray-600'
+        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
       >
         <motion.span
           animate={{ rotate: [0, 10, 0] }}
@@ -55,6 +56,7 @@ const Header = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}      
         className='text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight'
+        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
       >
         Machine Learning & AI{' '}
         <motion.span
@@ -76,6 +78,7 @@ const Header = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.7 }}      
         className='max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed'
+        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
       >
         Specializing in <span className='font-semibold text-gray-800'>data science</span>,{' '}
         <span className='font-semibold text-gray-800'>machine learning</span>, and{' '}
@@ -98,6 +101,7 @@ const Header = () => {
           whileTap={{ scale: 0.98 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           className='px-8 py-4 rounded-full bg-gradient-to-r from-gray-900 to-black text-white flex items-center gap-3 font-medium shadow-lg'
+          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
         >
           Contact Me 
           <motion.span
@@ -118,6 +122,7 @@ const Header = () => {
           whileTap={{ scale: 0.98 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           className='px-8 py-4 rounded-full bg-white border border-gray-200 flex items-center gap-3 font-medium shadow-lg hover:bg-gray-50'
+          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
         >
           My Resume
           <motion.span
