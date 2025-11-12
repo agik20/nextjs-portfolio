@@ -93,37 +93,31 @@ export const workData = [
     status: 'Completed',
     bgImage: '/work-1.png',
     link: 'https://github.com/agik20/Exam-Cheating',
-    technologies: ['YOLOv8', 'Python', 'OpenCV', 'PyTorch', 'Computer Vision', 'Pose Estimation', 'Real-time Processing'],
+    technologies: ['YOLOv8', 'Python', 'OpenCV', 'PyTorch', 'Jetson Orin Nano', 'Computer Vision', 'Pose Estimation', 'Edge Computing'],
     features: [
-      'Real-time object detection for prohibited items',
-      'Pose estimation for unusual behavior detection',
-      'Multi-object tracking in exam environments',
-      'Automated alert system with timestamped evidence'
+      'YOLOv8-based model for object and pose detection in real-time exam monitoring',
+      'Edge deployment on Jetson Orin Nano with web-based dashboard',
+      'Automatic alert system with visual evidence and activity logging',
+      'Supports multiple cheating categories including smartphone use and peer interaction'
     ],
     achievements: [
-      '76% accuracy for smartphone detection',
-      '62-67% accuracy for normal pose classification',
-      'Real-time processing at 30 FPS',
-      'Reduced manual monitoring effort by 60%'
+      'Achieved 96% pose estimation accuracy and 98% object detection precision',
+      'Operated at 8–9 FPS with 2.9 s average latency per detection',
+      'Reduced manual supervision effort by 60%',
+      'Integrated dashboard for live proctoring and evidence review'
     ],
     content: `
-## Project Overview
-A comprehensive real-time exam monitoring system designed to automatically detect cheating behaviors using advanced computer vision techniques. This system helps educational institutions maintain academic integrity during examinations.
+## Overview
+A deep learning–based real-time proctoring system that detects cheating activities during written exams. Built using YOLOv8 for both object detection and pose estimation, the system identifies suspicious behaviors like smartphone use or interactions between students.
 
-## Problem Statement
-Manual monitoring of exams is resource-intensive and prone to human error. This solution provides automated, consistent surveillance capable of detecting subtle cheating behaviors that might be missed by human proctors.
+## Highlights
+- Designed for deployment on **Jetson Orin Nano** with 1080p camera input.
+- Processes live video streams with **low-latency inference**.
+- Delivers automated evidence capture with timestamps and classification labels.
+- Developed to assist academic integrity through intelligent automation.
 
-## Technical Implementation
-- **Object Detection**: YOLOv8 model trained on custom dataset of exam-related objects
-- **Pose Estimation**: Real-time body pose analysis to detect unusual movements
-- **Multi-camera Support**: Synchronized processing across multiple camera feeds
-- **Alert System**: Immediate notifications with visual evidence for proctors
-
-## Key Features
-- Real-time video processing with low latency
-- Support for multiple cheating behavior patterns
-- Scalable architecture for large examination halls
-- Privacy-preserving design (no facial recognition)
+## Impact
+Enabled educational institutions to maintain fair and efficient exam supervision while demonstrating scalable AI integration in real-time environments.
     `
   },
   {
@@ -133,76 +127,31 @@ Manual monitoring of exams is resource-intensive and prone to human error. This 
     category: 'Surveillance & Security AI',
     status: 'Completed',
     bgImage: '/work-2.png',
-    link: 'https://github.com/agik20/yolov10-facenet-surveillance',
-    technologies: ['YOLOv10', 'FaceNet', 'Python', 'OpenCV', 'TensorFlow', 'Multi-camera Tracking', 'Face Recognition'],
+    link: 'https://github.com/agik20/criminal-suspect-localization',
+    technologies: ['YOLOv10', 'FaceNet', 'SVM', 'OpenCV', 'Python', 'TensorFlow', 'CCTV Integration', 'Web Dashboard'],
     features: [
-      'Real-time face recognition across CCTV network',
-      'Multi-camera suspect tracking and synchronization',
-      'Automated suspect database matching',
-      'Location-based alert system'
+      'Real-time face detection using YOLOv10s optimized for CCTV environments',
+      'High-accuracy face recognition with FaceNet and SVM classification',
+      'Mock database for suspect identity matching via simulated NIK input',
+      'Web interface for live monitoring, history tracking, and suspect search'
     ],
     achievements: [
-      '94% face recognition accuracy in controlled environments',
-      'Real-time processing across 4+ camera feeds',
-      'Reduced suspect identification time from hours to seconds',
-      'Successfully integrated with existing CCTV infrastructure'
+      'Achieved 100% accuracy, precision, and recall across all classes',
+      'Seamless operation on both CPU and GPU environments',
+      'Fully integrated front-end dashboard for law enforcement simulation',
+      'Demonstrated strong potential for intelligent video surveillance systems'
     ],
     content: `
-## Project Overview
-An intelligent surveillance system that integrates object detection and face recognition to automatically identify and track criminal suspects across CCTV networks in real-time.
+## Overview
+A computer vision system for automatic suspect localization through CCTV feeds using **YOLOv10** for detection and **FaceNet + SVM** for recognition. Built to support law enforcement with automated, accurate identity tracking.
 
-## Solution Architecture
-- **Detection Layer**: YOLOv10 for real-time object and face detection
-- **Recognition Layer**: FaceNet for high-accuracy face embedding and matching
-- **Tracking Layer**: Multi-camera synchronization and trajectory prediction
-- **Alert Layer**: Instant notifications with suspect location and movement patterns
+## Highlights
+- Detects and classifies faces in real-time from CCTV streams.
+- Provides match results and visual logs through an interactive web dashboard.
+- Uses a simulated NIK-based database for demonstration without using real data.
 
-## Technical Highlights
-- Optimized for low-light CCTV conditions
-- Support for partial face recognition
-- Scalable database for suspect records
-- Privacy-compliant data handling
-    `
-  },
-  {
-    title: 'California Housing Prices – Machine Learning Mini Project',
-    slug: 'california-housing-prices',
-    description: 'Aug 2025 - Present',
-    category: 'Data Science & Machine Learning',
-    status: 'In Progress',
-    bgImage: '/work-3.png',
-    link: 'https://github.com/agik20/californiahousingprices',
-    technologies: ['Python', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Jupyter', 'Regression Models'],
-    features: [
-      'Comprehensive data preprocessing and cleaning',
-      'Advanced feature engineering',
-      'Multiple regression model comparison',
-      'Interactive data visualization'
-    ],
-    achievements: [
-      'Achieved R² score of 0.85 on test data',
-      'Reduced MAE by 30% compared to baseline model',
-      'Identified key housing price determinants',
-      'Created interactive prediction dashboard'
-    ],
-    content: `
-## Project Overview
-A comprehensive machine learning project analyzing California housing prices to identify key market factors and build accurate price prediction models.
-
-## Data Analysis
-- **Dataset**: California Housing Prices from 1990 census
-- **Features**: Median income, housing age, rooms, location, ocean proximity
-- **Preprocessing**: Handling missing values, feature scaling, outlier detection
-
-## Modeling Approach
-- **Algorithms**: Linear Regression, Decision Trees, Random Forest, Gradient Boosting
-- **Evaluation**: Cross-validation, MAE, R², RMSE metrics
-- **Feature Importance**: Identification of key price determinants
-
-## Insights
-- Location and median income are strongest predictors
-- Ocean proximity significantly impacts property values
-- Non-linear relationships require advanced modeling techniques
+## Impact
+Streamlines surveillance operations by automating suspect recognition and reducing manual monitoring time, showcasing the potential of AI-assisted security infrastructure.
     `
   },
   {
@@ -213,51 +162,148 @@ A comprehensive machine learning project analyzing California housing prices to 
     status: 'Completed',
     bgImage: '/work-4.png',
     link: 'https://github.com/agik20/nextjs-portfolio',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Responsive Design', 'UI/UX Principles'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Responsive Design', 'SEO Optimization'],
     features: [
-      'Fully responsive design for all devices',
-      'Dark/light mode toggle',
-      'Smooth animations and transitions',
-      'SEO optimized structure',
-      'Fast loading with optimized images'
+      'Fully responsive personal portfolio built with Next.js and Tailwind CSS',
+      'Dark/light mode with smooth animation transitions using Framer Motion',
+      'SEO-optimized structure for performance and visibility',
+      'Modular, maintainable codebase designed for scalability'
     ],
     achievements: [
-      '98% Lighthouse performance score',
-      'Fully accessible (WCAG 2.1 compliant)',
-      'Mobile-first responsive design',
-      'Reduced bounce rate by 40% compared to previous portfolio'
+      'Deployed live at 98% Lighthouse performance score',
+      'Achieved WCAG 2.1 accessibility compliance',
+      'Responsive across all devices and screen sizes',
+      'Showcases projects, skills, and experience interactively'
     ],
     content: `
-## Project Overview
-A modern, performant portfolio website showcasing my projects and skills with emphasis on user experience, accessibility, and visual design.
+## Overview
+A personal portfolio website developed to present my technical projects and skills in a visually engaging way. Built using **Next.js 14**, it emphasizes performance, accessibility, and smooth user experience.
 
-## Design Philosophy
-- **User-Centered**: Intuitive navigation and clear information hierarchy
-- **Performance**: Optimized loading times and smooth interactions
-- **Accessibility**: WCAG 2.1 compliant with keyboard navigation and screen reader support
-- **Maintainability**: Clean, modular code structure for easy updates
+## Highlights
+- Integrated **dark/light theme toggle** with custom animations.
+- Structured content for **SEO optimization and fast load times**.
+- Implemented responsive layouts ensuring consistency across devices.
+- Deployed seamlessly to **Vercel** for global accessibility.
 
-## Technical Implementation
-- **Framework**: Next.js 14 with App Router
-- **Styling**: Tailwind CSS for consistent design system
-- **Animations**: Framer Motion for smooth interactions
-- **Deployment**: Vercel with CI/CD pipeline
-
-## Features
-- Project filtering and search functionality
-- Contact form with validation
-- Blog section for technical articles
-- Analytics integration for user behavior tracking
+## Impact
+Serves as my professional digital presence, showcasing AI, data science, and engineering projects through a clean and modern interface.
     `
   },
-]
+  {
+  title: 'California Housing Prices – Machine Learning Project',
+  slug: 'california-housing-prices',
+  description: 'Aug 2025 - Present',
+  category: 'Data Science & Machine Learning',
+  status: 'Completed',
+  bgImage: '/work-3.png',
+  link: 'https://github.com/agik20/californiahousinprice',
+  technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib', 'Seaborn', 'Flask', 'Docker', 'Data Visualization'],
+  features: [
+    'End-to-end ML pipeline from EDA to web app deployment',
+    'Comprehensive data preprocessing and feature engineering',
+    'Regression modeling with Random Forest and XGBoost',
+    'Interactive Flask app for real-time housing price prediction',
+    'Dockerized environment for scalable deployment'
+  ],
+  achievements: [
+    'Achieved R² score of 0.83 using XGBoost',
+    'Reduced MAE by 30% compared to baseline model',
+    'Developed fully functional Flask web interface for predictions',
+    'Visualized key housing trends and geographic correlations'
+  ],
+  content: `
+## Overview
+A full-cycle machine learning project focused on predicting **California housing prices** using census data. This project demonstrates the application of advanced regression models, feature engineering, and data visualization for real-world predictive analytics.
+
+## Key Components
+- **Exploratory Data Analysis**: Detailed statistical and spatial exploration of housing attributes.
+- **Feature Engineering**: Created ratio-based features such as \`rooms_per_household\` and \`bedrooms_per_room\` to improve model performance.
+- **Modeling**: Implemented Linear Regression, Random Forest, and XGBoost with hyperparameter optimization via GridSearchCV.
+- **Deployment**: Packaged into a **Flask web application** with Docker support for scalable inference.
+
+## Results
+| Model | MAE | RMSE | R² Score |
+|--------|------|-------|----------|
+| Linear Regression | 48,660 | 67,305 | 0.67 |
+| Random Forest | 32,187 | 49,243 | 0.82 |
+| XGBoost | 31,827 | 48,125 | 0.83 |
+
+## Insights
+- **Median income** shows the highest correlation with housing prices (≈0.69).
+- **Coastal proximity** strongly increases property value.
+- **Feature engineering** significantly improved prediction accuracy.
+- Random Forest and XGBoost effectively captured non-linear relationships between socio-economic and geographic factors.
+
+## Impact
+Showcases strong proficiency in machine learning pipeline design, from **data acquisition to model deployment**, and demonstrates the capability to extract actionable insights from real-world datasets through **statistical rigor and automation**.
+  `
+},
+
+];
+
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Core Data & Analytics Skills', description: 'Skilled in extracting insights through statistical analysis and data-driven decision-making.', link: '' },
-    { icon: assets.mobile_icon, title: 'Machine Learning & AI', description: 'Experienced in building, training, and optimizing predictive and deep learning models.', link: '' },
-    { icon: assets.ui_icon, title: 'Programming & Tools', description: 'Proficient in Python, SQL, and Git with strong practices in clean, scalable coding.', link: '' },
-    { icon: assets.graphics_icon, title: 'Data Engineering & MLOps', description: 'Capable of handling pipelines, deployment, and cloud-based workflows for production-ready AI.', link: '' },
-]
+  { 
+    icon: assets.web_icon, 
+    title: 'Core Data & Analytics Skills', 
+    description: 'Proficient in data wrangling, analysis, and visualization to extract actionable insights.',
+    professionalDetails: {
+      businessValue: "Transforms raw datasets into actionable intelligence that supports data-driven decision-making across organizational levels.",
+      collaboration: "Collaborates with analysts, business units, and engineers to define data KPIs, improve reporting, and enhance analytic workflows.",
+      keyAchievements: [
+        "Delivered insight reports that improved decision accuracy by 30%",
+        "Built interactive dashboards enabling faster business insights",
+        "Streamlined data cleaning pipeline reducing manual prep by 50%"
+      ],
+      toolsTechnologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Tableau", "SQL", "Jupyter Notebook"]
+    }
+  },
+  { 
+    icon: assets.mobile_icon, 
+    title: 'Machine Learning & AI', 
+    description: 'Experienced in building predictive models and deploying intelligent systems for automation and decision support.',
+    professionalDetails: {
+      businessValue: "Leverages ML and deep learning to automate complex decision-making processes and uncover predictive patterns in data.",
+      collaboration: "Works with domain experts and data engineers to design scalable AI pipelines and ensure deployment-readiness of models.",
+      keyAchievements: [
+        "Developed YOLO-based model achieving 96% accuracy in real-time detection",
+        "Optimized ML models reducing inference time by 40%",
+        "Deployed end-to-end ML system with continuous retraining pipeline"
+      ],
+      toolsTechnologies: ["TensorFlow", "PyTorch", "YOLOv8", "Scikit-learn", "XGBoost", "OpenCV", "Jetson Orin Nano"]
+    }
+  },
+  { 
+    icon: assets.ui_icon, 
+    title: 'Programming & Tools', 
+    description: 'Strong foundation in software engineering, scripting, and collaborative version control.',
+    professionalDetails: {
+      businessValue: "Ensures efficient, maintainable, and scalable codebases that enhance development velocity and system reliability.",
+      collaboration: "Adopts best practices in Git-based collaboration, CI/CD, and documentation for reproducible results and team consistency.",
+      keyAchievements: [
+        "Built modular codebases reused across multiple projects",
+        "Reduced deployment friction using Dockerized workflows",
+        "Implemented CI pipelines improving release stability by 25%"
+      ],
+      toolsTechnologies: ["Python", "Git", "GitHub", "VS Code", "Docker", "Linux", "Bash"]
+    }
+  },
+  { 
+    icon: assets.graphics_icon, 
+    title: 'Data Engineering & MLOps', 
+    description: 'Designs and maintains robust pipelines for large-scale data processing and model deployment.',
+    professionalDetails: {
+      businessValue: "Bridges ML research with production by establishing reliable, automated data and model pipelines.",
+      collaboration: "Works with backend engineers and cloud specialists to orchestrate scalable model deployment on modern infrastructure.",
+      keyAchievements: [
+        "Implemented Airflow-based data pipelines reducing latency by 35%",
+        "Deployed containerized models with monitoring and logging support",
+        "Automated dataset versioning for reproducibility across projects"
+      ],
+      toolsTechnologies: ["Docker", "Airflow", "Kubernetes", "AWS", "Flask", "FastAPI", "GitHub Actions"]
+    }
+  },
+];
 
 export const toolsData = [
     assets.vscode, assets.jupyter, assets.git, assets.github, assets.anaconda, assets.docker, assets.tableau, assets.tensorflow
