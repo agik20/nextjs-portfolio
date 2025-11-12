@@ -156,11 +156,7 @@ const About = () => {
                 className="text-gray-700 leading-relaxed mb-10 font-light"
                 style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
               >
-                I am an AI and Machine Learning specialist with extensive expertise in computer vision, 
-                deep learning architectures, and intelligent system design. My approach combines technical 
-                excellence with practical implementation, focusing on developing scalable AI solutions 
-                that address real-world challenges. I excel at optimizing complex systems and transforming 
-                theoretical concepts into high-impact applications with measurable results.
+                Results-driven Electrical Engineering graduate (B.Eng.) with hands-on experience developing real-time intelligent automation systems using Deep Learning and Computer Vision. Engineered and deployed AI-based detection systems with up to 98% training accuracy and sub-3s latency, recognized through a Top 3 Favorite Thesis Award for innovation in real-time exam monitoring automation. Proficient in Python, TensorFlow, and PyTorch with strong foundations in data analysis, system modeling, and algorithm optimization. Committed to leveraging AI for scalable, data-driven decision systems that bridge research innovation with industrial implementation.
               </p>
 
               <motion.h4 
