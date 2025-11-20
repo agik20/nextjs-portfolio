@@ -4,109 +4,123 @@ import { assets, currentYear, socialLinks } from '@/assets/assets'
 import { motion } from 'framer-motion'
 
 const Footer = () => {
+  const navigation = [
+    { name: 'Home', href: '/' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' }
+  ]
+
   return (
-    <footer className='mt-32 bg-gradient-to-b from-white to-gray-50 pt-16 pb-8 px-4'>
-      <div className='max-w-6xl mx-auto'>
-        {/* Main footer content */}
-        <div className='text-center mb-16'>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Image 
-              src={assets.logo} 
-              alt='Ardutra Agi Ginting Logo' 
-              className='w-40 mx-auto mb-6 filter brightness-110'
-            />
-          </motion.div>
-
-          <motion.div 
-            className='inline-flex items-center gap-3 mx-auto p-3 px-5 rounded-full bg-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className='w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full'>
-              <Image src={assets.mail_icon} alt='Email icon' className='w-4' />
-            </div>
-            <span className='text-gray-700 font-medium' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>ardutraa40@gmail.com</span>
-          </motion.div>
-
-          {/* Call to action */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className='mt-10'
-          >
-            <h3 className='text-xl font-light text-gray-600 mb-6' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
-              Let's build something amazing together
-            </h3>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300'
-              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-8">
+          
+          {/* Brand Section */}
+          <div className="lg:col-span-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
             >
-              Get In Touch
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </motion.a>
-          </motion.div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                  <span className="text-gray-900 font-bold text-sm">A</span>
+                </div>
+                <span className="text-xl font-bold tracking-tight">Ardutra Agi</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-md">
+                I offer comprehensive development services to bring your ideas to life. 
+                From concept to deployment, let's create something extraordinary together.
+              </p>
+              
+              {/* Status Dots */}
+              <div className="flex items-center gap-2 mb-6">
+                {[1, 2, 3, 4].map((dot) => (
+                  <motion.div
+                    key={dot}
+                    className="w-2 h-2 bg-white rounded-full"
+                    animate={{ opacity: [0.3, 1, 0.3] }}
+                    transition={{ duration: 1.5, repeat: Infinity, delay: dot * 0.2 }}
+                  />
+                ))}
+                <span className="text-gray-400 text-sm ml-2">Available for work</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Contact Information */}
+          <div className="lg:col-span-4 lg:col-start-9">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-300">
+                Contact
+              </h3>
+              <div className="space-y-3 text-sm">
+                <p className="text-gray-400">Based in Indonesia</p>
+                <div className="space-y-1">
+                  <motion.a
+                    href="mailto:ardutraa40@gmail.com"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 block"
+                    whileHover={{ x: 5 }}
+                  >
+                    ardutraa40@gmail.com
+                  </motion.a>
+                </div>
+                
+                {/* Social Links */}
+                <div className="flex items-center gap-4 mt-4">
+                  {socialLinks.map((link, index) => (
+                    <motion.a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <span className="text-xs font-medium text-white">
+                        {link.name.charAt(0)}
+                      </span>
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Bottom section */}
+        {/* Bottom Bar */}
         <motion.div 
-          className='flex flex-col md:flex-row items-center justify-between border-t border-gray-200 pt-8'
+          className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className='text-gray-500 text-sm mb-4 md:mb-0' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © {currentYear} Ardutra Agi Ginting. All rights reserved.
           </p>
-          
-          <div className='flex items-center space-x-8'>
-            {socialLinks.map((link, index) => (
-              <motion.a
-                key={link.name}
-                href={link.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  y: -3,
-                  transition: { duration: 0.2 }
-                }}
-                className='text-gray-600 hover:text-gray-900 transition-colors duration-300 flex flex-col items-center'
-              >
-                <div className='w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mb-1'>
-                  <span className='font-semibold text-sm' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
-                    {link.name.charAt(0)}
-                  </span>
-                </div>
-                <span className='text-xs' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{link.name}</span>
-              </motion.a>
-            ))}
+          <div className="flex items-center gap-6">
+            <a href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+              Privacy
+            </a>
+            <a href="/terms" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+              Terms
+            </a>
           </div>
         </motion.div>
-      </div>
-
-      {/* Decorative elements */}
-      <div className='absolute left-0 right-0 -z-10'>
-        <div className='absolute bottom-0 left-10 w-32 h-32 bg-blue-100 rounded-full filter blur-3xl opacity-30'></div>
-        <div className='absolute bottom-0 right-10 w-32 h-32 bg-purple-100 rounded-full filter blur-3xl opacity-30'></div>
       </div>
     </footer>
   )
