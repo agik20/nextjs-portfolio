@@ -245,22 +245,6 @@ export default function ProjectDetail({ params }: ProjectParams) {
                       </p>
                     </div>
                   )}
-                  {project.year && (
-                    <div>
-                      <p 
-                        className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider mb-1"
-                        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
-                      >
-                        Year
-                      </p>
-                      <p 
-                        className="text-sm sm:text-base text-black"
-                        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
-                      >
-                        {project.year}
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
 
