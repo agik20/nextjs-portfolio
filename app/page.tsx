@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Project from "./components/Project";
+import Learning from "./components/Learning";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -16,6 +17,7 @@ export default function Home() {
     <About />
     <Skills />
     <Project />
+    <Learning />
     <Contact />
     <Footer />
     </>

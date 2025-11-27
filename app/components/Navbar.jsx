@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const mobileMenuRef = useRef()
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && 
@@ -17,35 +16,26 @@ const Navbar = () => {
       }
     }
 
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
     document.addEventListener('mousedown', handleClickOutside)
+    window.addEventListener('scroll', handleScroll)
+    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
-  // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const openMobileMenu = () => {
-    setIsMobileMenuOpen(true)
-    document.body.style.overflow = 'hidden'
+  const toggleMobileMenu = (isOpen) => {
+    setIsMobileMenuOpen(isOpen)
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto'
   }
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
-    document.body.style.overflow = 'auto'
-  }
+  const openMobileMenu = () => toggleMobileMenu(true)
+  const closeMobileMenu = () => toggleMobileMenu(false)
 
   const navItems = [
     { name: 'Home', href: '#top' },
@@ -61,12 +51,13 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 px-5 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 px-5 lg:px-8 xl:px-[8%] py-6 flex items-center justify-between z-50 transition-all duration-300 ${
           isScrolled 
-            ? "bg-white/80 backdrop-blur-md shadow-sm" 
+            ? "bg-white/95 backdrop-blur-md border-b border-gray-200" 
             : "bg-transparent"
         }`}
       >
+        {/* Logo/Name */}
         <motion.a 
           href="#top"
           whileHover={{ scale: 1.05 }}
@@ -80,21 +71,19 @@ const Navbar = () => {
         </motion.a>
 
         {/* Desktop Navigation */}
-        <div className={`hidden md:flex items-center gap-1 rounded-full px-8 py-2 ${
-          isScrolled ? "" : "bg-white/20 backdrop-blur-sm"
-        }`}>
-          {navItems.map((item, index) => (
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
             <motion.a
               key={item.name}
               href={item.href}
-              className="relative px-4 py-2 font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              whileHover={{ y: -2 }}
+              className="relative text-sm tracking-wide text-gray-700 hover:text-black transition-colors uppercase"
+              whileHover={{ y: -1 }}
               transition={{ duration: 0.2 }}
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
               {item.name}
               <motion.span 
-                className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500"
+                className="absolute -bottom-1 left-0 w-0 h-[1px] bg-black"
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
@@ -106,36 +95,31 @@ const Navbar = () => {
         <motion.div className="hidden lg:flex">
           <motion.a 
             href="#contact"
-            className="flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white rounded-full font-medium shadow-md"
+            className="px-6 py-2 bg-black text-white text-sm tracking-wide uppercase border border-black"
             whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 5px 15px rgba(0,0,0,0.1)"
+              backgroundColor: '#fff',
+              color: '#000'
             }}
-            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.3 }}
             style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
           >
             Contact
-            <motion.div
-              animate={{ x: [0, 4, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5, delay: 1 }}
-            >
-              <Image src={assets.arrow_icon} alt="Arrow icon" className="w-3" />
-            </motion.div>
           </motion.a>
         </motion.div>
 
         {/* Mobile Menu Button */}
         <motion.button 
-          className="md:hidden p-2 rounded-lg"
+          className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           onClick={openMobileMenu}
           whileTap={{ scale: 0.95 }}
           aria-label="Open menu"
         >
-          <Image src={assets.menu_black} alt="Menu" className="w-6" />
+          <span className="w-6 h-[1px] bg-black"/>
+          <span className="w-6 h-[1px] bg-black"/>
         </motion.button>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
@@ -144,7 +128,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-black/40 z-40 md:hidden"
               onClick={closeMobileMenu}
             />
             
@@ -153,56 +137,72 @@ const Navbar = () => {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 bg-white shadow-xl z-50 md:hidden"
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="fixed top-0 right-0 bottom-0 w-80 bg-white z-50 md:hidden"
             >
               <div className="flex flex-col h-full">
-                <div className="p-6 border-b border-gray-100">
+                {/* Header */}
+                <div className="p-6 border-b border-gray-200">
                   <div className="flex justify-between items-center">
+                    <span className="text-sm tracking-widest text-gray-500 uppercase"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
+                      Menu
+                    </span>
                     <motion.button 
                       onClick={closeMobileMenu}
                       whileTap={{ scale: 0.9 }}
-                      className="p-2 rounded-full hover:bg-gray-100"
+                      className="w-8 h-8 flex items-center justify-center"
                       aria-label="Close menu"
                     >
-                      <Image src={assets.close_black} alt="Close" className="w-5" />
+                      <span className="text-2xl font-light">×</span>
                     </motion.button>
                   </div>
                 </div>
 
-                <nav className="flex-1 p-6">
-                  <ul className="space-y-6">
+                {/* Navigation Links */}
+                <nav className="flex-1 p-8">
+                  <ul className="space-y-8">
                     {navItems.map((item, index) => (
                       <motion.li 
                         key={item.name}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
+                        transition={{ delay: index * 0.05 + 0.1 }}
                       >
                         <a 
                           href={item.href} 
-                          className="block py-3 text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                          className="block text-2xl font-light text-black hover:translate-x-2 transition-transform"
                           onClick={closeMobileMenu}
                           style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
                         >
                           {item.name}
+                          <motion.div 
+                            initial={{ width: 0 }}
+                            whileHover={{ width: '3rem' }}
+                            className="h-[1px] bg-black mt-2"
+                          />
                         </a>
                       </motion.li>
                     ))}
                   </ul>
                 </nav>
 
-                <div className="p-6 border-t border-gray-100">
+                {/* Footer */}
+                <div className="p-6 border-t border-gray-200 space-y-4">
                   <motion.a 
                     href="#contact"
-                    className="flex items-center justify-center gap-2 w-full py-3 bg-gray-900 text-white rounded-lg font-medium shadow-md"
+                    className="flex items-center justify-center w-full py-3 bg-black text-white text-sm tracking-wide uppercase"
                     whileTap={{ scale: 0.98 }}
                     onClick={closeMobileMenu}
                     style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
                   >
-                    Contact Me
-                    <Image src={assets.arrow_icon} alt="Arrow icon" className="w-3 filter invert" />
+                    Get in touch
                   </motion.a>
+                  
+                  <div className="text-xs text-center text-gray-500 tracking-wider"
+                    style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
+                    AVAILABLE FOR OPPORTUNITIES
+                  </div>
                 </div>
               </div>
             </motion.div>

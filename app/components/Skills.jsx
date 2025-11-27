@@ -7,156 +7,273 @@ import { assets, serviceData } from '@/assets/assets'
 const Skills = () => {
   const [selectedService, setSelectedService] = useState(null)
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: 'easeOut' }
+    }
+  }
+
   return (
-    <motion.section 
+    <section 
       id="skills" 
-      className="w-full px-6 md:px-12 lg:px-16 py-16 md:py-24 scroll-mt-20 bg-gray-50"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
+      className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 sm:py-20 md:py-24 lg:py-32 scroll-mt-20 bg-white"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.header 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          <motion.span className="text-sm font-medium text-mid tracking-wider uppercase mb-3 block">
-            Technical Abilities
-          </motion.span>
-          <motion.h2 className="text-4xl md:text-5xl font-normal text-darkest mb-5">
-            My Expertise
-          </motion.h2>
-          <motion.div 
-            className="w-16 h-0.5 bg-mid mx-auto"
-            initial={{ width: 0 }}
-            whileInView={{ width: 64 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          />
-        </motion.header>
-
-        <motion.p 
-          className="text-center max-w-3xl mx-auto mt-5 mb-16 text-gray-700 leading-relaxed font-light"
-        >
-          I specialize in the complete data science pipeline — from data exploration and model training to scalable deployment. My focus is on building reliable AI-driven systems that convert complex data into meaningful, actionable outcomes.
-        </motion.p>
-
-        {/* Grid */}
+        {/* Section Label */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="flex items-center gap-3 sm:gap-4 mb-12 sm:mb-16 md:mb-20"
         >
-          {serviceData.map(({icon, title, description, professionalDetails}, index) => (
-            <motion.div 
-              key={index}
-              className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
-              whileHover={{ y: -8 }}
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: '3rem' }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className='h-[1.5px] sm:h-[2px] bg-black'
+          />
+          <span className='text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-gray-600 uppercase'
+            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
+            Expertise
+          </span>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {/* Header */}
+          <motion.div variants={itemVariants} className="mb-12 sm:mb-16 md:mb-20">
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-black mb-6 sm:mb-8 leading-tight"
+              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
-              <div className="w-14 h-14 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                <div className="w-8 h-8 relative">
-                  <Image src={icon} alt={title} fill className="object-contain" />
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-semibold text-darkest mb-4">{title}</h3>
-              <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{description}</p>
-              
-              <button
+              Technical
+              <br />
+              <span className="font-normal">Capabilities</span>
+            </h2>
+            
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className='h-[0.5px] sm:h-[1px] bg-gradient-to-r from-black via-gray-400 to-transparent mb-6 sm:mb-8'
+            />
+
+            <p 
+              className="max-w-3xl text-sm sm:text-base text-gray-700 leading-relaxed"
+              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+            >
+              I specialize in the complete data science pipeline — from data exploration and model training 
+              to scalable deployment. My focus is on building reliable AI-driven systems that convert complex 
+              data into meaningful, actionable outcomes.
+            </p>
+          </motion.div>
+
+          {/* Skills Grid */}
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
+            variants={containerVariants}
+          >
+            {serviceData.map(({icon, title, description, professionalDetails}, index) => (
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                className="bg-white border border-gray-200 p-6 sm:p-8 flex flex-col h-full group cursor-pointer hover:border-black transition-colors duration-300"
+                whileHover={{ y: -4 }}
                 onClick={() => setSelectedService({ title, description, professionalDetails })}
-                className="flex items-center gap-2 text-mid font-medium text-sm mt-auto group"
               >
-                View Professional Details
-                <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </motion.span>
-              </button>
-            </motion.div>
-          ))}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-6 sm:mb-8">
+                  <div className="w-full h-full relative grayscale group-hover:grayscale-0 transition-all duration-300">
+                    <Image src={icon} alt={title} fill className="object-contain" />
+                  </div>
+                </div>
+                
+                <h3 
+                  className="text-base sm:text-lg font-normal text-black mb-3 sm:mb-4"
+                  style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                >
+                  {title}
+                </h3>
+                
+                <p 
+                  className="text-xs sm:text-sm text-gray-600 mb-6 flex-grow leading-relaxed"
+                  style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                >
+                  {description}
+                </p>
+                
+                <div className="flex items-center gap-2 text-[10px] sm:text-xs text-black uppercase tracking-wider group-hover:gap-3 transition-all">
+                  <span style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
+                    View Details
+                  </span>
+                  <motion.span 
+                    className="transition-transform"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, delay: index * 0.2 }}
+                  >
+                    →
+                  </motion.span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
 
         {/* Modal */}
         <AnimatePresence>
           {selectedService && (
             <motion.div 
-              className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4 py-8"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4 py-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedService(null)}
             >
               <motion.div 
-                className="bg-white rounded-2xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-                initial={{ scale: 0.9, opacity: 0, y: 30 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.9, opacity: 0, y: 30 }}
-                transition={{ duration: 0.3 }}
+                className="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ duration: 0.2 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-6">
-                    <h3 className="text-2xl font-semibold text-darkest">{selectedService.title}</h3>
-                    <button onClick={() => setSelectedService(null)} className="text-gray-400 hover:text-gray-700 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
+                {/* Modal Header */}
+                <div className="sticky top-0 bg-white border-b border-gray-200 p-6 sm:p-8 flex justify-between items-start z-10">
+                  <h3 
+                    className="text-xl sm:text-2xl font-normal text-black"
+                    style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                  >
+                    {selectedService.title}
+                  </h3>
+                  <button 
+                    onClick={() => setSelectedService(null)} 
+                    className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors"
+                    aria-label="Close modal"
+                  >
+                    <span className="text-2xl font-light">×</span>
+                  </button>
+                </div>
+
+                {/* Modal Content */}
+                <div className="p-6 sm:p-8 space-y-8 sm:space-y-10">
+                  <div>
+                    <h4 
+                      className="text-xs sm:text-sm tracking-[0.2em] text-gray-600 uppercase mb-4"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      Overview
+                    </h4>
+                    <p 
+                      className="text-sm sm:text-base text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      {selectedService.description}
+                    </p>
                   </div>
 
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Overview</h4>
-                      <p className="text-gray-700 leading-relaxed">{selectedService.description}</p>
-                    </div>
+                  <div className="border-t border-gray-200 pt-8 sm:pt-10">
+                    <h4 
+                      className="text-xs sm:text-sm tracking-[0.2em] text-gray-600 uppercase mb-4"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      Business Value
+                    </h4>
+                    <p 
+                      className="text-sm sm:text-base text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      {selectedService.professionalDetails.businessValue}
+                    </p>
+                  </div>
 
-                    <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Business Value</h4>
-                      <p className="text-gray-700 leading-relaxed">{selectedService.professionalDetails.businessValue}</p>
-                    </div>
+                  <div className="border-t border-gray-200 pt-8 sm:pt-10">
+                    <h4 
+                      className="text-xs sm:text-sm tracking-[0.2em] text-gray-600 uppercase mb-4"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      Collaboration & Teamwork
+                    </h4>
+                    <p 
+                      className="text-sm sm:text-base text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      {selectedService.professionalDetails.collaboration}
+                    </p>
+                  </div>
 
-                    <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Collaboration & Teamwork</h4>
-                      <p className="text-gray-700 leading-relaxed">{selectedService.professionalDetails.collaboration}</p>
-                    </div>
+                  <div className="border-t border-gray-200 pt-8 sm:pt-10">
+                    <h4 
+                      className="text-xs sm:text-sm tracking-[0.2em] text-gray-600 uppercase mb-6"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      Key Achievements
+                    </h4>
+                    <ul className="space-y-4">
+                      {selectedService.professionalDetails.keyAchievements.map((achievement, i) => (
+                        <li 
+                          key={i} 
+                          className="flex items-start gap-4 text-sm sm:text-base text-gray-700"
+                          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                        >
+                          <span className="w-1 h-1 bg-black rounded-full mt-2 flex-shrink-0"></span>
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                    <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Key Achievements</h4>
-                      <ul className="space-y-2">
-                        {selectedService.professionalDetails.keyAchievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-3 text-gray-700">
-                            <span className="w-2 h-2 bg-mid rounded-full mt-2 flex-shrink-0"></span>
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
+                  <div className="border-t border-gray-200 pt-8 sm:pt-10">
+                    <h4 
+                      className="text-xs sm:text-sm tracking-[0.2em] text-gray-600 uppercase mb-6"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      Core Technologies
+                    </h4>
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
+                      {selectedService.professionalDetails.toolsTechnologies.map((tool, i) => (
+                        <span 
+                          key={i} 
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700 text-xs sm:text-sm font-light"
+                          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                        >
+                          {tool}
+                        </span>
+                      ))}
                     </div>
+                  </div>
 
-                    <div>
-                      <h4 className="text-lg font-medium text-darkest mb-3">Core Technologies</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedService.professionalDetails.toolsTechnologies.map((tool, i) => (
-                          <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="text-lg font-medium text-darkest mb-2">Professional Impact</h4>
-                      <p className="text-gray-700 text-sm">
-                        This expertise enables me to deliver robust, scalable solutions that align with business objectives 
-                        and drive measurable results through effective collaboration and technical excellence.
-                      </p>
-                    </div>
+                  <div className="border border-gray-200 p-6 sm:p-8 bg-gray-50">
+                    <h4 
+                      className="text-xs sm:text-sm tracking-[0.2em] text-gray-600 uppercase mb-3"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      Professional Impact
+                    </h4>
+                    <p 
+                      className="text-xs sm:text-sm text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                    >
+                      This expertise enables me to deliver robust, scalable solutions that align with business objectives 
+                      and drive measurable results through effective collaboration and technical excellence.
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -164,7 +281,7 @@ const Skills = () => {
           )}
         </AnimatePresence>
       </div>
-    </motion.section>
+    </section>
   )
 }
 
