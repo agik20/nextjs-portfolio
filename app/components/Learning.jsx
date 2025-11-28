@@ -169,24 +169,6 @@ const LearningCard = ({ material, index }) => {
 
           {/* Hover Overlay */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-500" />
-          
-          {/* Hover Content */}
-          <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h3
-                className="font-normal text-base sm:text-lg mb-2"
-                style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
-              >
-                {material.title}
-              </h3>
-              <p
-                className="text-xs sm:text-sm text-gray-200 line-clamp-2"
-                style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
-              >
-                {material.description}
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Content Below Image */}

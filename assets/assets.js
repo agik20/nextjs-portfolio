@@ -289,126 +289,6 @@ Seluruh komponen ini bekerja sebagai satu ekosistem. Memahami fondasinya membuat
     `
   },
   {
-    title: 'General Banking',
-    slug: 'general-banking',
-    description: 'Fundamentals of banking operations and services',
-    category: 'Banking & Finance',
-    status: 'Completed',
-    bgImage: '/general-banking.png',
-    duration: '10 min reading',
-    level: 'Professional',
-    technologies: ['Banking Operations', 'Communication Skills', 'Document Management', 'Financial Systems'],
-    features: [
-      'Complete overview of banking operations and financial systems',
-      'Professional communication skills for banking environment',
-      'Standardized document management procedures',
-      'Regulatory compliance and security protocols'
-    ],
-    topics: [
-      'General Banking Operations',
-      'Effective Communication in Banking',
-      'Document Management Standards',
-      'Payment Systems',
-      'Customer Service Excellence',
-      'Regulatory Compliance'
-    ],
-    content: `
-## Banking Fundamentals Training
-
-### 1. General Banking
-
-#### Pengertian Bank
-Menurut UU No. 10 Tahun 1998, bank adalah badan usaha yang menghimpun dana dari masyarakat dalam bentuk simpanan dan menyalurkannya kembali kepada masyarakat dalam rangka meningkatkan taraf hidup rakyat banyak.
-
-#### Fungsi Utama Bank
-- **Menghimpun dana**: Tabungan, giro, deposito
-- **Menyalurkan dana**: Kredit atau pembiayaan
-- **Memberikan jasa keuangan**: Transfer, inkaso, kliring, safe deposit box, ATM, layanan digital
-
-#### Peranan Bank dalam Sistem Keuangan
-- Mengalihkan dana/aset dari pihak yang surplus ke pihak yang defisit
-- Menjaga stabilitas sistem keuangan dengan menyediakan likuiditas
-- Mendukung sistem pembayaran nasional
-
-#### Jenis Produk Simpanan
-- **Tabungan**: Bisa ditarik kapan saja, tidak dapat ditarik dengan cek
-- **Giro**: Penarikan menggunakan cek atau bilyet giro
-- **Deposito**: Penarikan berdasarkan jangka waktu
-
-#### Sistem Pembayaran
-**BI-RTGS**
-Layanan transfer dana elektronik antar bank dalam rupiah secara real time untuk transaksi bernilai besar.
-
-**Kliring**
-Proses perhitungan warkat antar bank meliputi:
-- Cek
-- Bilyet giro
-- Sertifikat Deposito (CD)
-- Nota Debet
-- Nota Kredit
-
-**Biaya Transfer**
-Biaya transfer keluar dibebankan pada nasabah pemberi amanat.
-
-**Keamanan Simpanan**
-Dana nasabah dijamin oleh LPS (Lembaga Penjamin Simpanan) hingga batas tertentu.
-
-### 2. Communication Skill
-
-#### Komunikasi Empatik
-Empati dalam komunikasi berarti memahami dan merasakan sudut pandang orang lain. Fokusnya bukan memotong, menilai, atau menyiapkan sanggahan, tetapi mendengarkan dengan kualitas penuh.
-
-#### Elemen Komunikasi Efektif
-- **Verbal**: Pemilihan kata dan kejelasan isi pesan
-- **Non-verbal**: Bahasa tubuh, ekspresi wajah, kontak mata. Ini merupakan elemen paling kuat dalam menyampaikan emosi
-- **Intonasi**: Penekanan dan ritme bicara
-
-#### Prinsip-prinsip Dasar Komunikasi
-- **Clarity**: Pesan harus jelas, ringkas, dan mudah dipahami
-- **Coherence**: Keselarasan antara kata, bahasa tubuh, dan intonasi
-- **Active Listening**: Menghindari gangguan internal maupun eksternal, fokus pada isi pembicara
-
-#### Storytelling dalam Bisnis
-Tujuannya adalah menciptakan keterlibatan emosional, membangun konteks, dan membuat pesan lebih mudah diingat.
-
-#### Komunikasi Berdasarkan Tipe DISC
-- **Compliance (C)**: Fokus pada data, fakta, logika, prosedur
-- **Steadiness (S)**: Hindari tekanan. Berikan aspek keamanan, stabilitas, dan jaminan jangka panjang
-
-#### Fungsi Feedback
-Digunakan untuk memastikan pemahaman dan menyesuaikan pesan jika diperlukan.
-
-### 3. Tata Persuratan
-
-#### Asas Persuratan
-- **Asas Pertanggungjawaban**: Isi, format, dan prosedur surat harus dapat dipertanggungjawabkan
-- **Asas Kerahasiaan**: Isi surat hanya dapat diakses oleh pihak yang berkepentingan
-- **Asas Pembakuan**: Surat disusun mengikuti tata cara, format, dan bentuk yang telah ditetapkan secara resmi
-
-#### Jenis Persuratan BNI
-- Surat Edaran
-- Pengumuman
-- Instruksi
-- Surat Keluar Lainnya sesuai kebutuhan organisasi
-
-#### Pengelolaan Surat Keluar
-- Surat rahasia dan sangat rahasia dikelola oleh Sekretaris unit/organisasi BNI terkait
-- Agenda Surat Keluar berisi: Nomor, Tanggal, Kepada, Tujuan, Perihal, dan Keterangan
-- Masa berlaku nomor Agenda Surat Keluar adalah 1 tahun
-- Unit pengolah wajib menyimpan pertinggal/salinan sebagai bukti
-
-#### Pengelolaan Surat Masuk
-1. Penerimaan (kegiatan awal)
-2. Pencatatan dalam agenda
-3. Pembubuhan disposisi oleh pejabat berwenang
-4. Diteruskan ke sub unit yang berkaitan dengan isi surat
-5. Pengarsipan
-
-### Penutup
-Ketiga topik ini membentuk fondasi penting dalam operasional perbankan modern. Mulai dari pemahaman sistem keuangan, kemampuan komunikasi yang efektif, hingga tata kelola persuratan yang tertib dan terstandarisasi. Pemahaman menyeluruh terhadap materi ini bukan hanya membantu kinerja individu, tetapi juga menjaga integritas dan profesionalitas organisasi.
-    `
-  },
-  {
     title: 'The Art of Effective Communication',
     slug: 'effective-communication-art',
     description: 'Journey towards meaningful human connection beyond words',
@@ -557,9 +437,9 @@ Di akhir pelatihan, saya menyadari bahwa komunikasi adalah keterampilan yang har
     `
   },
   {
-    title: 'Linux Learning Journey: From Networking Basics to System Security',
-    slug: 'linux-learning-journey',
-    description: 'Comprehensive journey through Linux networking, security, and system administration',
+    title: 'Linux Essentials and System Administration',
+    slug: 'linux-learning',
+    description: 'Fundamental Linux skills for networking, DNS, NTP, security, package management, and system administration',
     category: 'System Administration',
     status: 'Completed',
     bgImage: '/linux.png',
@@ -584,8 +464,6 @@ Di akhir pelatihan, saya menyadari bahwa komunikasi adalah keterampilan yang har
       'System Administration Mindset'
     ],
     content: `
-## Linux Learning Journey: From Networking Basics to System Security
-
 Ketika pertama kali memutuskan untuk serius belajar Linux, saya mengira perjalanan ini hanya akan sebatas mengenal beberapa command dasar, instalasi server, lalu selesai. Namun saya sadar bahwa Linux bukan hanya sebuah sistem operasi - ia adalah ekosistem yang menghubungkan jaringan, server, keamanan, hingga filosofi open source yang begitu dalam.
 
 Artikel ini saya tulis bukan sekadar rangkuman kaku, tapi sebagai narasi perjalanan belajar. Saya ingin berbagi apa saja yang saya pelajari - dari konsep dasar jaringan, konfigurasi DNS, manajemen paket, hingga keamanan sistem - lengkap dengan momen "aha!" yang saya alami.
@@ -734,7 +612,133 @@ Bagi saya, course ini bukan hanya tiket untuk pekerjaan di bidang IT. Ini adalah
 
 Linux itu bukan sekadar digunakan - Linux itu harus dipahami. Dan begitu kamu memahaminya, kamu akan melihat teknologi dengan cara yang sama sekali baru.
     `
-  }  
+  },
+  {
+    title: 'IT Service Management (ITSM) Essentials',
+    slug: 'itsm-essentials',
+    description: 'Understanding the importance and implementation of ITSM in IT environments',
+    category: 'IT Service Management',
+    status: 'Completed',
+    bgImage: '/itsm.png',
+    duration: '15 min reading',
+    level: 'Intermediate',
+    technologies: ['ITSM', 'ITIL', 'Incident Management', 'Change Management', 'Problem Management', 'Service Desk'],
+    features: [
+      'Comprehensive overview of ITSM concepts',
+      'Key ITIL processes and their applications',
+      'Benefits and challenges of ITSM implementation',
+      'Best practices for ITSM maintenance and automation'
+    ],
+    topics: [
+      'ITSM Overview',
+      'Key ITIL Processes',
+      'ITSM in Banking Industry',
+      'IT Infrastructure Management Roles',
+      'IT Infrastructure Release & Command Center (IRC)',
+      'Critical ITSM Processes'
+    ],
+    content: `
+Kita hidup di dunia yang terasa selalu tersedia secara digital. Mobile banking berjalan mulus setiap kali kamu mengecek saldo. ATM tidak pernah lelah menyediakan uang tunai. Sistem payroll memastikan gaji masuk tepat waktu. Padahal semua itu hanya terlihat mudah karena ada sebuah pendekatan yang memastikan teknologi bekerja rapi di belakang layar. Pendekatan itu disebut IT Service Management, atau ITSM.
+
+ITSM adalah cara organisasi mengelola layanan teknologi informasi secara terstruktur supaya kebutuhan bisnis selalu terpenuhi. Ia menggabungkan proses yang jelas, orang yang bertanggung jawab, dan alat yang mendukung, sehingga layanan TI tetap stabil, terukur, dan terus meningkat kualitasnya. Intinya sederhana: pengguna tidak perlu paham teknologi untuk bisa bekerja dengan nyaman. Mereka hanya perlu layanan yang selalu siap ketika dibutuhkan.
+
+Di sinilah peran ITIL hadir memberikan panduan. Jika ITSM adalah apa yang dilakukan, maka ITIL adalah bagaimana melakukannya. Kerangka ini membantu organisasi menjaga keselarasan TI dengan tujuan bisnis melalui praktik terbaik yang sudah terbukti. Tidak semua organisasi harus mengadopsi seluruh proses ITIL. Namun proses-proses penting seperti Incident Management untuk memulihkan gangguan dengan cepat, Change Management untuk mengontrol setiap perubahan, dan Problem Management untuk mencegah masalah berulang, hampir selalu diimplementasikan karena dampaknya nyata.
+
+Penerapan ITSM terlihat sangat jelas di industri yang tidak boleh berhenti barang sedetik saja, seperti perbankan. Setiap transaksi harus berhasil, setiap sistem harus hidup, setiap risiko harus terkendali. Di balik kepercayaan nasabah, ada tim besar yang berjaga. Di banyak bank, tim ini dikenal sebagai IT Infrastructure Management, pilar utama yang memastikan seluruh infrastruktur berjalan sebagaimana mestinya. Ketika server harus dipantau, insiden harus ditangani, dan konfigurasi harus tetap akurat, tidak ada ruang untuk kelalaian.
+
+Di pusatnya, terdapat unit yang berperan sebagai ruang kendali sistem digital: IT Infrastructure Release & Command Center (IRC). Tempat ini memonitor layanan secara real-time, mengoordinasikan respons jika ada gangguan, menjaga akurasi data aset TI agar setiap perubahan tetap terkendali, mempersiapkan pemulihan saat bencana datang, serta memastikan perangkat dan software yang digunakan karyawan selalu siap mendukung produktivitas. Seluruhnya bekerja seperti kokpit pesawat yang memastikan perjalanan digital tetap aman tanpa guncangan.
+
+Namun orkestrasi besar ini tidak hanya bergantung pada satu departemen. Ada delapan proses ITSM penting yang menjadi tulang belakang keberlangsungan layanan: menyelesaikan gangguan secepat mungkin, memperbaiki akar masalah, mengontrol perubahan, merilis software dengan aman, mengelola seluruh konfigurasi dan aset TI, menjamin pemenuhan SLA, serta menangani berbagai permintaan pengguna secara efisien. Semua proses tersebut saling terhubung dan menciptakan siklus perbaikan yang tidak pernah berhenti.
+
+Pada akhirnya, ITSM adalah bentuk pertahanan dan pengelolaan yang menjaga kepercayaan dalam dunia digital. Ia bekerja tanpa banyak dipuji dan hanya disadari ketika sesuatu salah. Di era yang menuntut serba cepat dan tanpa toleransi untuk downtime, ITSM memastikan organisasi tetap berlari tanpa terjatuh. Setiap keberhasilan login, setiap transaksi yang sukses, setiap layanan yang tetap hidup sepanjang waktu, menjadi bukti bahwa ITSM diam-diam melakukan tugasnya dengan sangat baik.
+
+"Karena layanan yang selalu siap bukan keberuntungan. Itu hasil kerja para penjaga senyap di balik layar sistem digital."
+          `
+  },
+  {
+    title: 'Configuration Management Database (CMDB) Essentials',
+    slug: 'cmdb-essentials',
+    description: 'Understanding the importance and implementation of CMDB in IT environments',
+    category: 'IT Service Management',
+    status: 'Completed',
+    bgImage: '/cmdb.png',
+    duration: '15 min reading',
+    level: 'Intermediate',
+    technologies: ['CMDB', 'Configuration Management', 'ITSM', 'Asset Management', 'Change Management', 'Incident Management'],
+    features: [
+      'Comprehensive overview of CMDB concepts',
+      'Key components and relationships in CMDB',
+      'Benefits and challenges of CMDB implementation',
+      'Best practices for CMDB maintenance and automation'
+    ],
+    topics: [
+      'CMDB Overview',
+      'Key Components of CMDB',
+      'Benefits of Implementing CMDB',
+      'Common Challenges and Best Practices',
+      'CMDB Maintenance and Automation'
+    ],
+    content: `
+Dalam dunia IT yang makin ribut ini, semua bisnis sekarang sudah seperti jet komersial yang selalu terbang tanpa boleh mendarat. Semua sistem harus berjalan, semua layanan harus aktif, dan semua gangguan harus diselesaikan sebelum ada yang panik di ruang rapat. Masalahnya, banyak organisasi bahkan tidak tahu apa saja komponennya, siapa yang bertanggung jawab atas apa, atau apa yang akan ikut jatuh kalau satu server bermasalah. Di titik inilah CMDB jadi pahlawan yang sering diragukan eksistensinya.
+
+CMDB, atau Configuration Management Database, adalah otak yang menyimpan informasi seluruh aset dan komponen layanan IT. Benda yang terdengar sangat administratif ini sebenarnya fondasi dari stabilitas layanan digital. Semua yang berpotensi membuat IT bernapas bisa masuk ke dalamnya. Server yang jadi favorit semua aplikasi? Ada. Software yang licensinya tinggal sehari lagi? Ada. Layanan payroll yang diam-diam tergantung pada LDAP yang rapuh itu? Semestinya ada juga.
+
+Yang membuat CMDB menarik bukan cuma daftar barangnya, tapi hubungan antar komponennya. Begitu sebuah layanan mati, CMDB bisa menunjukkan jalur tragedinya dengan cepat: siapa saja korban yang ikut tumbang dan siapa yang harus bertanggung jawab memperbaikinya. Tanpanya, tim IT terpaksa menerawang log server seperti cenayang mencari arwah root cause.
+
+Banyak orang salah paham dan mengira CMDB itu proyek sekali jadi. Padahal kalau informasinya tidak pernah diperbarui, isinya berubah jadi museum error masa lalu. CMDB baru berguna ketika organisasi disiplin mencatat setiap perubahan infrastruktur dan menghubungkan tiap komponen satu sama lain. Dengan data yang hidup seperti itu, keputusan perubahan sistem tidak lagi seperti lompat ke kolam gelap sambil berharap ada air di dalamnya.
+
+Kamu mungkin berpikir, “Kenapa repot?” Karena saat insiden besar datang di hari Senin pagi, tidak ada yang mau jadi tim IT yang berdiri di depan manajemen sambil berkata, “Kami juga nggak tahu apa yang rusak.” CMDB mempercepat pemulihan, menurunkan biaya downtime, memastikan kepatuhan audit, dan memberi kejelasan siapa melakukan apa terhadap sistem apa.
+
+Banyak organisasi gagal membangunnya, bukan karena konsepnya sulit, tetapi karena terlalu rakus ingin mendata semuanya sejak hari pertama. CMDB paling berhasil justru dimulai kecil, fokus pada layanan paling kritikal, lalu berkembang seiring kedewasaan proses ITSM. Kuncinya sederhana tapi menyakitkan: jaga data tetap akurat. Automasi sinkronisasi dengan alat monitoring, asset discovery, dan DevOps pipeline akan menyelamatkan tradisi update manual yang selalu terlambat.
+
+CMDB tidak akan pernah populer seperti AI, cloud, atau revolusi buzzword lainnya. Tapi tanpa CMDB, semua inovasi itu bisa runtuh seperti menara kartu yang ditiup manajemen saat rapat terbuka. Ia adalah komponen pendiam yang memastikan teknologi organisasi tetap punya arah dan kontrol.
+
+Pada akhirnya, CMDB membuat IT bekerja berdasarkan fakta, bukan firasat. Dan di era seperti ini, hanya organisasi yang tahu apa yang mereka punya yang benar-benar bisa bertahan saat segala sesuatu berubah lebih cepat dari timeline proyek yang kamu berani janjikan.    
+`
+  },
+  {
+    title: 'Key Components of ITSM: The 8 Pillars',
+    slug: 'key-components-itsm',
+    description: 'Understanding the key components that form the foundation of IT Service Management',
+    category: 'IT Service Management',
+    status: 'Completed',
+    bgImage: '/key-components-itsm.png',
+    duration: '15 min reading',
+    level: 'Intermediate',
+    technologies: ['ITSM', 'Incident Management', 'Problem Management', 'Change Management', 'Release Management', 'Configuration Management', 'Asset Management', 'Service Level Management', 'Service Request Management'],
+    features: [
+      'Comprehensive overview of ITSM concepts',
+      'Key components and relationships in ITSM',
+      'Benefits and challenges of ITSM implementation',
+      'Best practices for ITSM maintenance and automation'
+    ],
+    topics: [
+      'Overview of ITSM Components',
+      'Incident Management',
+      'Problem Management',
+      'Change Management',
+      'Release Management',
+      'Configuration Management',
+      'IT Asset Management',
+      'Service Level Management',
+      'Service Request Management'
+    ],
+    content: `
+Sebuah layanan digital tidak pernah berdiri hanya dari satu fungsi saja. Ada banyak proses yang saling menopang, membentuk ekosistem yang memastikan pengguna bisa bekerja dan bertransaksi tanpa hambatan. Di balik tampilan antarmuka yang sederhana, ITSM hadir dengan rangkaian komponen penting yang membangun keandalan dan konsistensi layanan. Delapan di antaranya memiliki peran yang sangat menentukan arah keseluruhan operasional TI dalam sebuah organisasi.
+
+Semua dimulai dari kemampuan memulihkan kondisi layanan ketika terjadi gangguan. Incident Management menjadi frontline yang bergerak cepat mengembalikan layanan ke keadaan normal setiap kali ada isu, tanpa terlalu terpaku dulu pada akar masalah. Begitu layanan pulih, barulah Problem Management mengambil alih untuk menelusuri penyebab utamanya agar gangguan serupa tidak kembali menghantui. Dua proses ini seperti petugas pemadam kebakaran dan tim investigasi yang bekerja beriringan menjaga agar organisasi tetap produktif.
+
+Saat teknologi terus berkembang, perubahan menjadi sesuatu yang tidak terhindarkan. Namun perubahan yang salah langkah dapat memicu kekacauan. Karena itu Change Management hadir untuk mengontrol setiap modifikasi pada sistem, memastikan semua perubahan direncanakan, dinilai risikonya, serta disetujui sebelum diterapkan. Perubahan itu sendiri sering berbentuk rilis software atau pembaruan fitur, yang kemudian ditangani lebih khusus oleh Release Management. Proses ini memastikan rilis dilakukan mulus dan aman, tanpa membuat pengguna merasa seperti sedang menjalani eksperimen.
+
+Agar semua ini bisa dikelola dengan baik, organisasi harus mengetahui dengan tepat apa saja yang ada di lingkungan TI mereka. Configuration Management menyimpan seluruh data aset dan hubungan antarkomponennya dalam sebuah repositori bernama CMDB. Dengan informasi yang akurat, dampak perubahan dapat diprediksi, insiden dapat ditangani berdasarkan bukti, dan keputusan teknis bisa dibuat dengan percaya diri. Tidak kalah penting, IT Asset Management memastikan siklus hidup setiap perangkat dan lisensi dikelola secara optimal, dari pengadaan hingga pensiun, sehingga anggaran tidak terbuang sia-sia dan kepatuhan tetap terjaga.
+
+Di sisi lain, pengguna TI juga memiliki kebutuhan yang tidak selalu berupa gangguan. Banyak dari mereka hanya membutuhkan akses baru, perangkat lunak tambahan, atau izin tertentu untuk bekerja. Service Request Management mengatur alur pemenuhan kebutuhan semacam ini agar tidak mengacaukan penanganan insiden dan tetap cepat terselesaikan. Semua interaksi ini lalu menjadi dasar komitmen antara TI dan pengguna. Karenanya ada Service Level Management yang menjaga agar janji layanan yang tertuang dalam SLA tidak hanya menjadi teori, melainkan tercapai secara konsisten dan bisa dipertanggungjawabkan.
+
+Delapan komponen ini bergerak bak roda gigi yang saling mengunci. Jika satu melemah, yang lain ikut terganggu. Ketika semuanya berjalan seimbang, organisasi akan merasakan manfaat nyata: layanan lebih andal, pengguna lebih puas, biaya lebih terkendali, dan risiko lebih mudah diantisipasi. Dari insiden mendadak hingga inovasi sistem yang terencana, setiap aktivitas berada pada jalur yang jelas dan terukur.
+
+Dalam dunia yang bergantung pada stabilitas digital, delapan komponen ITSM ini menjadi fondasi yang memastikan setiap klik, setiap transaksi, dan setiap operasi dapat terus berjalan tanpa jeda. Mereka adalah struktur yang tidak terlihat, tetapi menopang seluruh keberhasilan layanan TI modern.
+`
+  },
 ];
 
 export const serviceData = [
