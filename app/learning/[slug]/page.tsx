@@ -339,7 +339,7 @@ export default function LearningDetail({ params }: LearningParams) {
               className="text-lg font-medium text-black mb-2"
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
-              You've completed this material
+              You have completed this material
             </h3>
             <p 
               className="text-gray-600 mb-6 max-w-md"
