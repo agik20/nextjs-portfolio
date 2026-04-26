@@ -1,9 +1,10 @@
-import { assets } from '@/assets/assets'
+import { getPortfolioAssets } from '@/src/entities/portfolio/repository'
 import Image from 'next/image'
 import React, { useRef, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Navbar = () => {
+  const assets = getPortfolioAssets()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const mobileMenuRef = useRef()

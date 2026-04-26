@@ -1,9 +1,10 @@
-import { assets } from '@/assets/assets'
+import { getPortfolioAssets } from '@/src/entities/portfolio/repository'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 
 const Header = () => {
+  const assets = getPortfolioAssets()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

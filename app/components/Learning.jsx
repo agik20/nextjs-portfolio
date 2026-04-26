@@ -4,28 +4,11 @@ import React from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { learningData } from "@/assets/assets"
+import { getLearningMaterials } from "@/src/entities/portfolio/repository"
+import { containerRevealVariants, itemRevealVariants, viewportOnce } from "@/src/shared/lib/motion"
 
 const Learning = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5, ease: 'easeOut' }
-    }
-  }
+  const learningData = getLearningMaterials()
 
   return (
     <section
@@ -54,13 +37,13 @@ const Learning = () => {
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
+          variants={containerRevealVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="mb-12 sm:mb-16 md:mb-20">
+          <motion.div variants={itemRevealVariants} className="mb-12 sm:mb-16 md:mb-20">
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-black mb-6 sm:mb-8 leading-tight"
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
@@ -90,7 +73,7 @@ const Learning = () => {
           {/* Learning Grid */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-            variants={containerVariants}
+            variants={containerRevealVariants}
           >
             {learningData.map((material, index) => (
               <LearningCard key={material.slug} material={material} index={index} />
@@ -99,7 +82,7 @@ const Learning = () => {
 
           {/* Coming Soon Notice */}
           <motion.div
-            variants={itemVariants}
+            variants={itemRevealVariants}
             className="mt-12 sm:mt-16 text-center"
           >
             <p
@@ -112,7 +95,7 @@ const Learning = () => {
 
           {/* Suggest Topics Button */}
           <motion.div
-            variants={itemVariants}
+            variants={itemRevealVariants}
             className="flex justify-center mt-12 sm:mt-16"
           >
             <motion.a

@@ -1,25 +1,26 @@
-'use client'
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Project from "./components/Project";
-import Learning from "./components/Learning";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+"use client";
+import {
+  AboutSection,
+  ContactSection,
+  FooterSection,
+  HeaderSection,
+  LearningSection,
+  NavbarSection,
+  ProjectSection,
+  SkillsSection,
+} from "@/src/features/home/sections";
 
 export default function Home() {
-  
   return (
     <>
-    <Navbar />
-    <Header />
-    <About />
-    <Skills />
-    <Project />
-    <Learning />
-    <Contact />
-    <Footer />
+      <NavbarSection />
+      <HeaderSection />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectSection />
+      <LearningSection />
+      <ContactSection />
+      <FooterSection />
     </>
   );
 }

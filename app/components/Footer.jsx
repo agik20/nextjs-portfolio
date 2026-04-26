@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import { assets, currentYear, socialLinks } from '@/assets/assets'
+import { getCurrentYear, getSocialLinks } from '@/src/entities/portfolio/repository'
 import { motion } from 'framer-motion'
 
 const Footer = () => {
+  const socialLinks = getSocialLinks()
+  const currentYear = getCurrentYear()
   const navigation = [
     { name: 'Home', href: '#top' },
     { name: 'About', href: '#about' },

@@ -1,10 +1,15 @@
 // app/learning/[slug]/page.tsx
 
-import { learningData } from "@/assets/assets";
+import {
+  getLearningMaterialBySlug,
+  getLearningMaterials,
+} from "@/src/entities/portfolio/repository";
 import Link from "next/link";
 import Image from "next/image";
-import { marked } from "marked";
 import { Metadata } from "next";
+import { renderMarkdown } from "@/src/shared/lib/markdown";
+import { getLearningMarkdownContent } from "@/src/entities/portfolio/content.server";
+import { buildFallbackMarkdown } from "@/src/shared/lib/content-fallback";
 
 interface LearningParams {
   params: {
@@ -13,11 +18,11 @@ interface LearningParams {
 }
 
 export async function generateStaticParams() {
-  return learningData.map((material) => ({ slug: material.slug }));
+  return getLearningMaterials().map((material) => ({ slug: material.slug }));
 }
 
 export async function generateMetadata({ params }: LearningParams): Promise<Metadata> {
-  const material = learningData.find((m) => m.slug === params.slug);
+  const material = getLearningMaterialBySlug(params.slug);
 
   return {
     title: material ? `${material.title} - Learning Materials` : "Material Not Found",
@@ -27,8 +32,8 @@ export async function generateMetadata({ params }: LearningParams): Promise<Meta
   };
 }
 
-export default function LearningDetail({ params }: LearningParams) {
-  const material = learningData.find((m) => m.slug === params.slug);
+export default async function LearningDetail({ params }: LearningParams) {
+  const material = getLearningMaterialBySlug(params.slug);
 
   if (!material) {
     return (
@@ -52,7 +57,10 @@ export default function LearningDetail({ params }: LearningParams) {
     );
   }
 
-  const htmlContent = material.content ? marked.parse(material.content) : "";
+  const markdownFromFile = await getLearningMarkdownContent(material.slug);
+  const htmlContent = renderMarkdown(
+    markdownFromFile ?? material.content ?? buildFallbackMarkdown(material),
+  );
 
   return (
     <div className="min-h-screen bg-white">

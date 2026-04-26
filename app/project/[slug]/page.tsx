@@ -1,8 +1,10 @@
-import { workData } from "@/assets/assets";
+import { getProjectBySlug, getProjects } from "@/src/entities/portfolio/repository";
 import Link from "next/link";
 import Image from "next/image";
-import { marked } from "marked";
 import { Metadata } from "next";
+import { renderMarkdown } from "@/src/shared/lib/markdown";
+import { getProjectMarkdownContent } from "@/src/entities/portfolio/content.server";
+import { buildFallbackMarkdown } from "@/src/shared/lib/content-fallback";
 
 interface ProjectParams {
   params: {
@@ -11,11 +13,11 @@ interface ProjectParams {
 }
 
 export async function generateStaticParams() {
-  return workData.map((p) => ({ slug: p.slug }));
+  return getProjects().map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({ params }: ProjectParams): Promise<Metadata> {
-  const project = workData.find((p) => p.slug === params.slug);
+  const project = getProjectBySlug(params.slug);
 
   return {
     title: project ? `${project.title} - Portfolio` : "Project Not Found",
@@ -25,8 +27,8 @@ export async function generateMetadata({ params }: ProjectParams): Promise<Metad
   };
 }
 
-export default function ProjectDetail({ params }: ProjectParams) {
-  const project = workData.find((p) => p.slug === params.slug);
+export default async function ProjectDetail({ params }: ProjectParams) {
+  const project = getProjectBySlug(params.slug);
 
   if (!project) {
     return (
@@ -50,7 +52,10 @@ export default function ProjectDetail({ params }: ProjectParams) {
     );
   }
 
-  const htmlContent = project.content ? marked.parse(project.content) : "";
+  const markdownFromFile = await getProjectMarkdownContent(project.slug);
+  const htmlContent = renderMarkdown(
+    markdownFromFile ?? project.content ?? buildFallbackMarkdown(project),
+  );
 
   return (
     <div className="min-h-screen bg-white">

@@ -1,29 +1,51 @@
 # Next.js Portfolio
 
-This is a personal portfolio built with Next.js. It showcases my projects, skills, and experiences. The portfolio is designed to provide a seamless user experience and highlights my work effectively.
+Personal portfolio built with Next.js 15, React 19, Tailwind CSS 4, and Framer Motion.  
+This project uses a modular feature-based structure with clear separation between UI, metadata, and markdown content.
 
-## Setup Instructions
+## Tech Stack
 
-To get started with this project, follow these steps:
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Framer Motion
+- Marked (Markdown rendering)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/agik20/nextjs-portfolio.git
-   ```
-2. Navigate into the project directory:
-   ```bash
-   cd nextjs-portfolio
-   ```
-3. Install the dependencies:
+## Project Structure
+
+```text
+app/                              # Route entrypoints only
+src/
+  entities/portfolio/
+    data/                         # Metadata source (projects, learning, services, meta)
+    repository.ts                 # Data access boundary for UI
+    content.server.ts             # Server-side markdown loader
+    content-map.ts                # Slug -> markdown file map
+    types.ts                      # Shared domain types
+  features/home/sections/         # Home page section composition
+  shared/lib/                     # Shared utilities (motion + markdown + fallback)
+  content/
+    projects/*.md                 # Project long-form content
+    learning/*.md                 # Learning long-form content
+assets/assets.js                  # Asset registry only
+docs/architecture.md              # Architecture decisions and migration notes
+```
+
+## Getting Started
+
+1. Install dependencies:
    ```bash
    npm install
    ```
-4. Start the development server:
+2. Run development server:
    ```bash
    npm run dev
    ```
-5. Open your browser and visit `http://localhost:3000` to see your portfolio in action.
+3. Open `http://localhost:3000`.
 
-## Live Demo
+## Content Workflow
 
-Check out the live demo of the portfolio [here](https://nextjs-portfolio-eight-lemon.vercel.app).
+- Update project/learning body text in `src/content/**/*.md`.
+- Update cards metadata in `src/entities/portfolio/data/*.ts`.
+- Keep UI logic inside `app/components` or move gradually into `src/features`.

@@ -1,9 +1,10 @@
-import { assets, infoList, toolsData, tool } from '@/assets/assets'
+import { getToolIcons } from '@/src/entities/portfolio/repository'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
 const About = () => {
+  const toolsData = getToolIcons()
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

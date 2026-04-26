@@ -2,30 +2,12 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { assets, serviceData } from '@/assets/assets'
+import { getServiceCapabilities } from '@/src/entities/portfolio/repository'
+import { containerRevealVariants, itemRevealVariants, viewportOnce } from "@/src/shared/lib/motion"
 
 const Skills = () => {
+  const serviceData = getServiceCapabilities()
   const [selectedService, setSelectedService] = useState(null)
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5, ease: 'easeOut' }
-    }
-  }
 
   return (
     <section 
@@ -54,13 +36,13 @@ const Skills = () => {
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
+          variants={containerRevealVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="mb-12 sm:mb-16 md:mb-20">
+          <motion.div variants={itemRevealVariants} className="mb-12 sm:mb-16 md:mb-20">
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-black mb-6 sm:mb-8 leading-tight"
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
@@ -90,12 +72,12 @@ const Skills = () => {
           {/* Skills Grid */}
           <motion.div 
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
-            variants={containerVariants}
+            variants={containerRevealVariants}
           >
             {serviceData.map(({icon, title, description, professionalDetails}, index) => (
               <motion.div 
                 key={index}
-                variants={itemVariants}
+                variants={itemRevealVariants}
                 className="bg-white border border-gray-200 p-6 sm:p-8 flex flex-col h-full group cursor-pointer hover:border-black transition-colors duration-300"
                 whileHover={{ y: -4 }}
                 onClick={() => setSelectedService({ title, description, professionalDetails })}
