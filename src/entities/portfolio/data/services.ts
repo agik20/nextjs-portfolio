@@ -1,7 +1,8 @@
 import type { ServiceCapability } from "../types";
+import type { ServiceIconKey } from "../asset-keys";
 
 export type ServiceCapabilitySeed = Omit<ServiceCapability, "icon"> & {
-  iconKey: string;
+  iconKey: ServiceIconKey;
 };
 
 export const serviceCapabilityData: ServiceCapabilitySeed[] = [
