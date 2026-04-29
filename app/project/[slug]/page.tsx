@@ -96,7 +96,7 @@ export default async function ProjectDetail({ params }: ProjectParams) {
           {/* Hero Section */}
           <div className="mb-12 sm:mb-16 md:mb-20">
             <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
-              <div className='h-[1.5px] sm:h-[2px] w-12 bg-black' />
+              <div className='h-[1.5px] sm:h-0.5 w-12 bg-black' />
               <span 
                 className='text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-gray-600 uppercase'
                 style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
@@ -112,7 +112,7 @@ export default async function ProjectDetail({ params }: ProjectParams) {
               {project.title}
             </h1>
 
-            <div className='h-[0.5px] sm:h-[1px] bg-gradient-to-r from-black via-gray-400 to-transparent mb-6 sm:mb-8' />
+            <div className='h-[0.5px] sm:h-px bg-linear-to-r from-black via-gray-400 to-transparent mb-6 sm:mb-8' />
 
             <p 
               className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl"
@@ -123,7 +123,7 @@ export default async function ProjectDetail({ params }: ProjectParams) {
           </div>
 
           {/* Feature Image */}
-          <div className="relative w-full aspect-[21/9] mb-12 sm:mb-16 md:mb-20 overflow-hidden border border-gray-200">
+          <div className="relative w-full aspect-21/9 mb-12 sm:mb-16 md:mb-20 overflow-hidden border border-gray-200">
             <Image
               src={project.bgImage}
               alt={project.title}
