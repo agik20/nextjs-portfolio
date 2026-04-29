@@ -7,9 +7,9 @@ import { getProjectMarkdownContent } from "@/src/entities/portfolio/content.serv
 import { buildFallbackMarkdown } from "@/src/shared/lib/content-fallback";
 
 interface ProjectParams {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectParams): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   return {
     title: project ? `${project.title} - Portfolio` : "Project Not Found",
@@ -28,7 +29,8 @@ export async function generateMetadata({ params }: ProjectParams): Promise<Metad
 }
 
 export default async function ProjectDetail({ params }: ProjectParams) {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return (
