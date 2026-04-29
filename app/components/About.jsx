@@ -58,7 +58,7 @@ const About = () => {
             initial={{ width: 0 }}
             whileInView={{ width: '3rem' }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className='h-[1.5px] sm:h-[2px] bg-black'
+            className='h-[1.5px] sm:h-0.5 bg-black'
           />
           <span className='text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-gray-600 uppercase'
             style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
@@ -89,7 +89,7 @@ const About = () => {
                 initial={{ width: 0 }}
                 whileInView={{ width: '100%' }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className='h-[0.5px] sm:h-[1px] bg-gradient-to-r from-black via-gray-400 to-transparent mb-6 sm:mb-8 md:mb-10'
+                className='h-[0.5px] sm:h-px bg-linear-to-r from-black via-gray-400 to-transparent mb-6 sm:mb-8 md:mb-10'
               />
 
               <p 
@@ -242,7 +242,7 @@ const About = () => {
               </div>
               <div className="text-[10px] sm:text-xs text-gray-600 uppercase tracking-wider"
                 style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
-                Thesis Award
+                Favorite Thesis Award
               </div>
             </div>
             

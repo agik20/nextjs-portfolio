@@ -14,6 +14,11 @@ export const toolIconKeys = [
   "docker",
   "tableau",
   "tensorflow",
+  "vscode",
+  "figma",
+  "mongodb",
+  "firebase",
+  
 ] as const;
 
 export type ServiceIconKey = (typeof serviceIconKeys)[number];
