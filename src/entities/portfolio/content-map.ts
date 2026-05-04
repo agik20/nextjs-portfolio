@@ -3,6 +3,7 @@ export const projectContentMap: Record<string, string> = {
   "criminal-localization-cctv": "projects/criminal-localization-cctv.md",
   "uiux-portfolio-design": "projects/uiux-portfolio-design.md",
   "california-housing-prices": "projects/california-housing-prices.md",
+  "flight-price-prediction": "projects/flight-price-prediction.md",
 };
 
 export const learningContentMap: Record<string, string> = {

@@ -77,4 +77,23 @@ export const projectData: PortfolioProject[] = [
       "Packaged inference flow for reproducible deployment",
     ],
   },
+  {
+    title: "Flight Price Prediction - Machine Learning Project",
+    slug: "flight-price-prediction",
+    description: "Sep 2025 - Oct 2025",
+    category: "Data Science & Machine Learning",
+    status: "Completed",
+    bgImage: "/work-4.png",
+    link: "https://github.com/agik20/flight-price-prediction",
+    technologies: ["Python", "Scikit-learn", "Pandas", "Flask", "Docker"],
+    features: [
+      "End-to-end ML pipeline from EDA to deployment",
+      "Regression model comparison and evaluation",
+      "Interactive prediction interface for experimentation",
+    ],
+    achievements: [
+      "Improved model quality over baseline approaches",
+      "Packaged inference flow for reproducible deployment",
+    ],
+  },
 ];

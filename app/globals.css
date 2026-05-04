@@ -8,15 +8,10 @@
   --color-dark: #29343d;
   --color-darkest: #1e2025;  
 
-  /* Gunakan font Helvetica dari CDN */
+  /* Gunakan font Space Mono */
   --font-sans: "Space Mono", monospace;
   
   --shadow-black: 4px 4px 0 #06141b;
-}
-
-/* Pastikan font Helvetica digunakan */
-body {
-  font-family: "Space Mono", var(--font-sans);
 }
 
 @layer base {
