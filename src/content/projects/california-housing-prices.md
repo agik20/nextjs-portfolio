@@ -30,7 +30,7 @@ featured: true
 
 ## Exploratory Data Analysis
 
-### Scatter Matrix — Predictor–Target Relationships
+### Scatter Matrix — Predictor – Target Relationships
 
 ![Scatter matrix showing pairwise relationships between predictors and median_house_value](/plots/train_scatter.png)
 Pairwise scatter plots reveal non-linear relationships between features and `median_house_value`,
@@ -44,8 +44,13 @@ particularly for `median_income` — motivating the use of ensemble methods over
 |:--------------------------:|:-------------------------:|
 | ![Feature distributions before engineering](/plots/train_hist_before.png) | ![Feature distributions after engineering](/plots/train_hist_after.png) |
 
-Engineered ratio features (`rooms_per_household`, `bedrooms_per_room`) produce tighter, more
-normally distributed signals compared to their raw counterparts.
+Based on the outputs from both before and after engineering:
+
+In the before image (left), the distributions of total_rooms, total_bedrooms, households, and population show very extreme skewness. All four features share a similar pattern: the majority of the data is concentrated in the initial values ​​(on the left) with very high bars, then quickly drops off with a long tail extending to the right. This indicates that the data is highly non-normal and contains many outliers at high values.
+
+After applying log transformation, in the after image (right), all four features undergo a dramatic transformation into a much more symmetrical distribution, approaching a normal curve. In this after image, the histogram bars are more evenly distributed in the center, forming a bell-shaped curve, without the extreme spike at the beginning. The range of values ​​on the x-axis also becomes smaller (e.g., households from 0-40,000 to 2-10), indicating logarithmic value compression.
+
+This change is very important because the normal distribution in the after image makes the machine learning algorithm work more optimally and stably, compared to the highly skewed distribution in the before image.
 
 ---
 
@@ -54,6 +59,14 @@ normally distributed signals compared to their raw counterparts.
 | Before | After |
 |:------:|:-----:|
 | ![Correlation matrix before feature engineering](/plots/train_corr_before.png) | ![Correlation matrix after feature engineering](/plots/train_corr_after.png) |
+
+Based on the output from before and after engineering:
+
+In the before image (left), the correlation heatmap displays 15 features with correlations between existing features after log transformation and one-hot encoding. Features such as total_rooms, total_bedrooms, population, and households show very high correlations with each other (0.87-0.97), indicating strong multicollinearity. The target variable, median_house_value, has a moderate correlation with median_income (0.69) and weaker correlations with other features.
+
+After adding domain-specific features, in the after image (right), two new features, bedroom_ratio and household_rooms, are displayed in the lower right corner of the heatmap. The bedroom_ratio feature (the ratio of bedrooms to total rooms) shows a stronger correlation with the target (0.26) than with raw features such as total_bedrooms. More interestingly, household_rooms (average number of rooms per household) has a very strong negative correlation with bedroom_ratio (-0.74), indicating that these two engineered features complement each other and provide different perspectives on property characteristics.
+
+The addition of these engineered features aims to create a more informative and potentially more predictive representation for machine learning models.
 
 ### Final Correlation Analysis
 

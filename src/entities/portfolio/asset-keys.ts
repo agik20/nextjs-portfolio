@@ -6,19 +6,17 @@ export const serviceIconKeys = [
 ] as const;
 
 export const toolIconKeys = [
-  "vscode",
-  "jupyter",
+  "anaconda",
+  "tensorflow",
+  "docker",
   "git",
   "github",
-  "anaconda",
-  "docker",
-  "tableau",
-  "tensorflow",
+  "jupyter",
   "vscode",
   "figma",
+  "react",
   "mongodb",
   "firebase",
-  
 ] as const;
 
 export type ServiceIconKey = (typeof serviceIconKeys)[number];

@@ -8,72 +8,74 @@ export type ServiceCapabilitySeed = Omit<ServiceCapability, "icon"> & {
 export const serviceCapabilityData: ServiceCapabilitySeed[] = [
   {
     iconKey: "web_icon",
-    title: "Core Data & Analytics Skills",
+    title: "Data Science & Machine Learning",
     description:
-      "Proficient in data wrangling, analysis, and visualization to extract actionable insights.",
+      "End-to-end ML pipelines from exploratory data analysis through model training, evaluation, and production deployment.",
     professionalDetails: {
       businessValue:
-        "Transforms raw datasets into actionable intelligence that supports data-driven decision-making across organizational levels.",
+        "Transforms raw datasets into predictive models that drive data-informed decisions — from housing price estimation to flight cost forecasting.",
       collaboration:
-        "Collaborates with analysts, business units, and engineers to define data KPIs, improve reporting, and enhance analytic workflows.",
+        "Works with data engineers and domain experts to define KPIs, validate model performance, and operationalize ML solutions in production.",
       keyAchievements: [
-        "Delivered insight reports that improved decision accuracy by 30%",
-        "Built interactive dashboards enabling faster business insights",
-        "Streamlined data cleaning pipeline reducing manual prep by 50%",
+        "Built regression pipeline achieving R²=0.83 across 5 model comparisons (XGBoost, CatBoost, LightGBM)",
+        "Developed feature engineering modules with 3x improvement over baseline predictions",
+        "Containerized ML inference with Docker and Flask for reproducible deployment",
       ],
-      toolsTechnologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Tableau", "SQL"],
+      toolsTechnologies: ["Python", "XGBoost", "CatBoost", "LightGBM", "scikit-learn", "pandas", "numpy", "Flask"],
     },
   },
   {
     iconKey: "mobile_icon",
-    title: "Machine Learning & AI",
+    title: "Computer Vision & Deep Learning",
     description:
-      "Experienced in building predictive models and deploying intelligent systems for automation and decision support.",
+      "Real-time object detection, pose estimation, and activity recognition systems deployed on edge devices.",
     professionalDetails: {
       businessValue:
-        "Leverages ML and deep learning to automate complex decision-making processes and uncover predictive patterns in data.",
+        "Enables automated visual intelligence for security, safety, and operational monitoring — reducing manual surveillance effort.",
       collaboration:
-        "Works with domain experts and data engineers to design scalable AI pipelines and ensure deployment-readiness of models.",
+        "Partner with hardware and infrastructure teams to deploy CV models on edge devices (Jetson Orin Nano) with optimized inference pipelines.",
       keyAchievements: [
-        "Developed YOLO-based model achieving 96% accuracy in real-time detection",
-        "Optimized ML models reducing inference time by 40%",
-        "Deployed end-to-end ML system with continuous retraining pipeline",
+        "Recognized with Top 3 Favorite Thesis Award for real-time exam cheating detection system",
+        "Achieved sub-3s latency on edge deployment with TensorRT-optimized YOLOv8 models",
+        "Built complete data pipeline: acquisition → annotation → augmentation → training → inference",
       ],
-      toolsTechnologies: ["TensorFlow", "PyTorch", "YOLOv8", "Scikit-learn", "XGBoost", "OpenCV"],
+      toolsTechnologies: ["YOLOv8", "PyTorch", "OpenCV", "ALBumentations", "TensorRT", "ultralytics", "FaceNet"],
     },
   },
   {
     iconKey: "ui_icon",
-    title: "Programming & Tools",
-    description: "Strong foundation in software engineering, scripting, and collaborative version control.",
+    title: "AI Engineering & RAG Systems",
+    description:
+      "Production-grade AI assistants combining LLMs, vector databases, and intelligent routing for enterprise workflows.",
     professionalDetails: {
       businessValue:
-        "Ensures efficient, maintainable, and scalable codebases that enhance development velocity and system reliability.",
+        "Bridges the gap between raw LLM capabilities and practical enterprise needs through RAG, classification, and contextual memory.",
       collaboration:
-        "Adopts best practices in Git-based collaboration, CI/CD, and documentation for reproducible results and team consistency.",
+        "Integrates with IT operations teams to build assistants that reduce incident resolution time and improve CMDB query accuracy.",
       keyAchievements: [
-        "Built modular codebases reused across multiple projects",
-        "Reduced deployment friction using Dockerized workflows",
-        "Implemented CI pipelines improving release stability by 25%",
+        "Designed adaptive routing system with IP-pattern detection for deterministic IT infrastructure lookups",
+        "Implemented zero-shot classification (BART-Large-MNLI) for 5-domain query categorization with 0.6+ confidence threshold",
+        "Built production FastAPI service with CSRF protection, CORS hardening, and segregated logging",
       ],
-      toolsTechnologies: ["Python", "Git", "GitHub", "VS Code", "Docker", "Linux", "Bash"],
+      toolsTechnologies: ["FastAPI", "Groq API", "Qdrant", "sentence-transformers", "Transformers", "pydantic", "uvicorn"],
     },
   },
   {
     iconKey: "graphics_icon",
-    title: "Data Engineering & MLOps",
-    description: "Designs and maintains robust pipelines for large-scale data processing and model deployment.",
+    title: "Full-stack Web Development",
+    description:
+      "Modern React-based applications with design systems, state management, and responsive UI components.",
     professionalDetails: {
       businessValue:
-        "Bridges ML research with production by establishing reliable, automated data and model pipelines.",
+        "Delivers polished, accessible web applications with clean architecture that users enjoy interacting with daily.",
       collaboration:
-        "Works with backend engineers and cloud specialists to orchestrate scalable model deployment on modern infrastructure.",
+        "Applies editorial design principles and component-driven development to create maintainable, scalable frontends.",
       keyAchievements: [
-        "Implemented Airflow-based data pipelines reducing latency by 35%",
-        "Deployed containerized models with monitoring and logging support",
-        "Automated dataset versioning for reproducibility across projects",
+        "Architected feature-based Next.js portfolio with markdown-driven content system and static generation",
+        "Built finance tracker with 100% client-side data persistence, interactive charts, and dark/light theming",
+        "Implemented shadcn/ui + Radix UI component library with Tailwind CSS v4 design tokens",
       ],
-      toolsTechnologies: ["Docker", "Airflow", "Kubernetes", "AWS", "Flask", "FastAPI"],
+      toolsTechnologies: ["Next.js 15", "React 18/19", "TypeScript", "Tailwind CSS 4", "shadcn/ui", "Recharts", "Framer Motion"],
     },
   },
 ];

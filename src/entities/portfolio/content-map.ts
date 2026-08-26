@@ -1,9 +1,10 @@
 export const projectContentMap: Record<string, string> = {
   "cheating-detection-yolov8": "projects/cheating-detection-yolov8.md",
-  "criminal-localization-cctv": "projects/criminal-localization-cctv.md",
-  "uiux-portfolio-design": "projects/uiux-portfolio-design.md",
+  "cmdb-ai-chatbot": "projects/cmdb-ai-chatbot.md",
   "california-housing-prices": "projects/california-housing-prices.md",
-  "flight-price-prediction": "projects/flight-price-prediction.md",
+  "lab-activity-recognition": "projects/lab-activity-recognition.md",
+  "finance-tracker-app": "projects/finance-tracker-app.md",
+  "nextjs-portfolio": "projects/nextjs-portfolio.md",
 };
 
 export const learningContentMap: Record<string, string> = {

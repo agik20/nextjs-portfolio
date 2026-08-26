@@ -2,27 +2,77 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-lightest: #92a4b1;
-  --color-light: #5a7480;
-  --color-mid: #3c5665;
-  --color-dark: #29343d;
-  --color-darkest: #1e2025;  
+  /* Warm editorial palette */
+  --color-cream: #f2ece4;
+  --color-cream-light: #f7f3ee;
+  --color-paper: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-charcoal: #2c2c2c;
+  --color-sage: #6b6560;
+  --color-mist: #c4bdb5;
+  --color-stone: #e8e2da;
+  --color-dark-bg: #1c1a17;
 
-  /* Gunakan font Space Mono */
-  --font-sans: "Space Mono", monospace;
-  
-  --shadow-black: 4px 4px 0 #06141b;
+  /* Typography */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 @layer base {
-  body,
-  h1, h2, h3, h4, h5, h6,
-  p, span, div, button, a,
-  label, input, textarea {
-    font-family: "Space Mono", monospace !important;
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-charcoal);
+    background-color: var(--color-cream);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--color-ink);
+    line-height: 1.1;
+  }
+
+  ::placeholder {
+    color: var(--color-sage);
   }
 }
 
-@utility grid-cols-auto {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+@layer components {
+  .section-label {
+    @apply text-[10px] tracking-[0.25em] uppercase text-sage;
+    font-family: var(--font-sans);
+  }
+
+  .section-divider {
+    @apply h-px bg-mist w-12;
+  }
+
+  .editorial-link {
+    @apply text-ink hover:text-sage transition-colors duration-300 underline underline-offset-4 decoration-mist hover:decoration-ink;
+    font-family: var(--font-sans);
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border border-ink text-ink text-xs tracking-widest uppercase hover:bg-ink hover:text-paper transition-all duration-300;
+    font-family: var(--font-sans);
+  }
+
+  .btn-filled {
+    @apply px-6 py-3 bg-ink text-paper text-xs tracking-widest uppercase hover:bg-charcoal transition-all duration-300;
+    font-family: var(--font-sans);
+  }
+
+  .input-underline {
+    @apply w-full bg-transparent border-0 border-b border-mist py-3 text-ink outline-none focus:border-ink transition-colors duration-300;
+    font-family: var(--font-sans);
+  }
 }

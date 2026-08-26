@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Heimy's Portfolio",
-  description: "",
+  title: "Ardutra Agi Ginting — Portfolio",
+  description: "Data Scientist & AI Engineer specializing in machine learning and intelligent automation.",
 };
 
 type RootLayoutProps = {
@@ -14,13 +14,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link
-          href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-sans antialiased leading-8 overflow-x-hidden">
+      <body className="font-sans antialiased bg-cream text-charcoal">
         {children}
       </body>
     </html>

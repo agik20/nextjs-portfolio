@@ -39,6 +39,7 @@ import jupyter from './jupyter.png';
 import docker from './docker.png';
 import tableau from './tableau.png';
 import tensorflow from './tensorflow.png';
+import react from './react.svg';
 
 export const assets = {
     user_image,
@@ -75,11 +76,12 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark, 
+    right_arrow_bold_dark,
     anaconda,
     github,
     jupyter,
     docker,
     tableau,
-    tensorflow
+    tensorflow,
+    react
 };
