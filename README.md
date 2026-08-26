@@ -264,7 +264,7 @@ Following `docs/architecture.md` migration plan:
 - [x] Convert all components from `.jsx` to `.tsx`
 - [x] Update `.gitignore` to exclude implementation docs
 - [x] Standardize all project content to consistent editorial format
-- [ ] Replace hardcoded Web3Forms key with `.env` variable (see `Contact.tsx`)
+- [x] Replace hardcoded Web3Forms key with `.env` variable (see `Contact.tsx`)
 
 ---
 
