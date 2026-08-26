@@ -2,27 +2,40 @@
 A complete human activity recognition pipeline using YOLOv8 keypoint detection. Covers the full lifecycle from raw video acquisition through annotation, augmentation, training, and Flask-based inference serving — all under MIT license.
 ---
 
+## Architecture
+
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| Acquisition | preprocessing/acquisition-data.py | Frame extraction from raw video (every 3rd frame) |
+| Annotation | preprocessing/annotation-data.py | Label creation using external tools (LabelImg/Roboflow) |
+| Augmentation | preprocessing/augmentation-data.py | ALBumentations-based dataset diversity |
+| Splitting | preprocessing/train-val-test-split.py | Stratified train/val/test dataset split |
+| Training | training/train.py | YOLO config-driven training with YAML specs |
+| Inference | inference/main.py | Flask serving with real-time processing |
+
+---
+
 ## Pipeline Overview
 
 ```
-Preprocessing -> Training -> Inference
-     ↓              ↓            ↓
- Acquisition    Model        Flask
- Annotation     Training     Serving
+Preprocessing  →  Training  →  Inference
+     ↓               ↓              ↓
+ Acquisition     Model          Flask
+ Annotation      Training       Serving
  Augmentation   YAML Config
  Split
 ```
 
----
+### Stage 1: Preprocessing
 
-## Stage 1: Preprocessing
+Four-stage data preparation pipeline:
 
-| Script | Purpose |
-|--------|---------|
-| `acquisition-data.py` | Frame extraction from raw video (every 3rd frame) |
-| `annotation-data.py` | Manual label creation using external tools (LabelImg/Roboflow) |
-| `augmentation-data.py` | ALBumentations-based augmentation for dataset diversity |
-| `train-val-test-split.py` | Stratified dataset splitting |
+| Step | Script | Output |
+|------|--------|--------|
+| Acquisition | `acquisition-data.py` | Extracted frames from video |
+| Annotation | `annotation-data.py` | YOLO-format label files |
+| Augmentation | `augmentation-data.py` | Transformed image variants |
+| Splitting | `train-val-test-split.py` | Train/val/test directories |
 
 Output structure:
 ```
@@ -30,9 +43,7 @@ data/output/images/{train,val,test}/
 data/output/labels/{train,val,test}/
 ```
 
----
-
-## Stage 2: Training
+### Stage 2: Training
 
 Configuration-driven training using YAML dataset specs:
 
@@ -44,20 +55,13 @@ names:
   0: activity_class
 ```
 
-Training command:
 ```bash
 python training/train.py --cfg configs/model/yolov8.yaml --data configs/dataset/labact-keypoint-recognition.yaml
 ```
 
----
+### Stage 3: Inference
 
-## Stage 3: Inference
-
-Flask-based inference server supporting:
-- Real-time video stream processing
-- Keypoint detection output
-- Activity classification results
-- Visualization overlay
+Flask-based inference server supporting real-time video stream processing with keypoint detection output, activity classification results, and visualization overlay.
 
 ---
 
@@ -66,13 +70,15 @@ Flask-based inference server supporting:
 | Layer | Technology |
 |-------|-----------|
 | Detection | YOLOv8 (ultralytics) |
-| Framework | PyTorch |
-| Processing | OpenCV, ALBumentations |
-| Serving | Flask |
+| Framework | PyTorch >= 2.1 |
+| Image Processing | OpenCV >= 4.9, ALBumentations >= 1.4 |
+| Serving | Flask >= 3.0 |
 | Evaluation | scikit-learn, matplotlib |
+| Data Structures | pandas, numpy, tqdm |
+| License | MIT |
 
 ---
 
-## License
+## Impact
 
-MIT — free for academic and commercial use.
+Complete open-source pipeline under MIT license with documented workflow. Production-ready Flask inference server for real-world activity recognition with comprehensive preprocessing and training infrastructure.

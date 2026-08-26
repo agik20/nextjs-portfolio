@@ -1,5 +1,5 @@
 ---
-An AI-powered CMDB assistant that answers IT infrastructure questions using RAG (Retrieval-Augmented Generation). Combines adaptive context routing, zero-shot query classification, and vector similarity search to deliver precise answers about configuration items, dependencies, and incident tracking.
+An AI-powered CMDB assistant that answers IT infrastructure questions using RAG with adaptive context routing, zero-shot query classification, and vector similarity search. Built with FastAPI, Groq LLM, Qdrant vector database, and BART-Large-MNLI classifier.
 ---
 
 ## Architecture
@@ -36,10 +36,15 @@ Five domain categories automatically detected (confidence threshold >= 0.6):
 | Application & CI details | "Version of Apache running" |
 | System problem & RCA | "Root cause of outage" |
 
-### Security & Reliability
+### Query Optimization
+
+Conversational memory enrichment before RAG search via LLM reasoning — queries are rephrased to include context from previous messages for more accurate retrieval.
+
+### Enterprise Security
 
 - CSRF protection via Origin header validation
 - CORS whitelist for frontend origins
+- Rate limiting via slowapi
 - Segregated logging (info, warning, critical, debug)
 
 ---
@@ -56,6 +61,23 @@ Five domain categories automatically detected (confidence threshold >= 0.6):
 
 ---
 
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Language | Python 3.11+ |
+| Backend | FastAPI, uvicorn |
+| LLM | Groq API |
+| Vector DB | Qdrant |
+| Embeddings | sentence-transformers |
+| Classification | transformers (BART-Large-MNLI) |
+| Validation | pydantic |
+| Logging | python-json-logger |
+| Rate Limiting | slowapi |
+| Frontend | Tailwind CSS |
+
+---
+
 ## Impact
 
-Transforms IT operations by providing instant, accurate answers about infrastructure dependencies — reducing mean time to resolution and enabling proactive impact analysis.
+Deployed production system handling CI dependency queries and incident tracking. Glassmorphism dark-themed UI with pinned prompts for rapid IT operations workflows. Transforms IT operations by providing instant, accurate answers about infrastructure dependencies — reducing mean time to resolution and enabling proactive impact analysis.

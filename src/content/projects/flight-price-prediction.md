@@ -1,124 +1,87 @@
-## Project Overview
+---
+A machine learning regression project predicting domestic flight ticket prices in India across 6 major airlines using 300,261 booking records from Ease My Trip. Covers data quality assessment, categorical encoding, exploratory analysis, and Linear Regression baseline modeling.
+---
 
-A machine learning regression project predicting domestic flight ticket prices in India using structured booking data. The pipeline covers data quality assessment, categorical encoding, exploratory analysis, and Linear Regression modeling — demonstrating systematic data-to-insight workflow on a real-world pricing dataset.
+## Architecture
+
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| Data Collection | Octoparse web scraper | Flight booking data from Ease My Trip platform |
+| Data Processing | Pandas, NumPy | Cleaning, validation, and feature transformation |
+| Visualization | Matplotlib, Seaborn, Plotly | EDA charts, correlation heatmaps, distribution plots |
+| Modeling | scikit-learn, XGBoost, CatBoost, LightGBM | Regression baseline and ensemble comparison |
+| Development | Jupyter Notebook, VS Code | Interactive analysis workflow |
 
 ---
 
-## The Problem
+## Dataset
 
-Flight prices are notoriously volatile — the same seat can differ by thousands of rupees depending on airline, booking timing, number of stops, and travel class. Can we build a model that reliably estimates ticket prices from booking metadata alone?
+**Source:** Ease My Trip platform, collected via Octoparse (Feb 11 – Mar 31, 2022)
 
-The dataset (`Clean_Dataset.csv`) contains **300,261 records** across three data splits — clean, business, and economy — covering **6 major Indian airlines** and routes between **6 source–destination city pairs**. The regression target is `price` (INR).
+| Attribute | Value |
+|-----------|-------|
+| Total Records | 300,261 |
+| Features | 11 |
+| Airlines | 6 (Air India, IndiGo, Vistara, etc.) |
+| Routes | 6 source–destination city pairs |
+| Timeframe | 50 days |
+| Classes | Economy, Business |
+| Target | `price` (INR) |
 
----
+**Data splits:** clean (300K+), business, economy — with zero missing values and zero duplicates after cleaning.
 
-## Dataset Structure
+### Feature Overview
 
 | Feature | Type | Description |
-|---|---|---|
-| `airline` | Categorical | 6 airlines (Air India, IndiGo, Vistara, etc.) |
+|---------|------|-------------|
+| `airline` | Categorical | 6 unique carriers |
 | `source_city` | Categorical | Origin city |
 | `destination_city` | Categorical | Destination city |
-| `departure_time` | Categorical | Time bucket (Morning, Evening, Night, etc.) |
-| `arrival_time` | Categorical | Time bucket |
-| `stops` | Categorical | zero / one / two-or-more |
-| `class` | Categorical | Economy or Business |
-| `duration` | Numeric | Flight duration in hours |
-| `days_left` | Numeric | Days between booking and departure |
-| `price` | Numeric | **Target** — ticket price in INR |
-
-Preprocessing steps: dropped `Unnamed: 0` and `flight` (identifier columns), confirmed **zero missing values** and **zero duplicates** in the clean split.
+| `departure_time` | Ordinal | Time bucket (Morning/Evening/Night) |
+| `arrival_time` | Ordinal | Arrival time bucket |
+| `stops` | Ordinal | 0 / 1 / 2+ stops |
+| `class` | Binary | Economy or Business |
+| `duration` | Numeric | Travel time in hours |
+| `days_left` | Numeric | Booking-to-departure gap |
+| `price` | Numeric | **Target** — ticket price (INR) |
 
 ---
 
-## Exploratory Data Analysis
+## Key Findings
 
-### Feature Value Distributions
+### Price Drivers
 
-![Count distribution of categorical features across airline, city, departure time, arrival time, stops, and class](/plots/boxplots_count.png)
-Distribution of categorical features across the dataset. Vistara and Air India dominate the airline split.
-Routes are relatively balanced across city pairs, while `stops` skews heavily toward one-stop flights —
-non-stop being the least common routing option.
+- **`class`** is the dominant predictor — Business class commands dramatically higher price floors
+- **`airline`** shows substantial variance: Vistara and Air India reach premium price points vs. budget carriers
+- **`days_left`** exhibits negative correlation with price — last-minute fares spike sharply
+- **`stops`** shows counterintuitive pattern: 2+ stops are cheaper on average (longer layover routes on budget airlines)
 
----
+### Model Performance
 
-### Price vs. Categorical Features
+Linear Regression establishes a baseline but reveals structural limitations:
 
-![Boxplots of ticket price against each categorical variable including airline, stops, and class](/plots/boxplots_price.png)
-Three patterns stand out immediately. **Business class** commands a dramatically higher price floor and ceiling
-than Economy — the class split is the single strongest categorical price driver. **Airline** shows substantial
-variance: Vistara and Air India Business tickets reach significantly higher price points than budget carriers.
-**Stops** exhibits a counterintuitive pattern — two-or-more stops are cheaper on average, likely reflecting
-longer layover routes on budget airlines rather than a direct causal relationship.
+- **Heteroscedasticity** detected — fan-shaped residuals indicating increasing variance at higher predicted prices
+- **Non-normal residuals** (Shapiro-Wilk p < 0.05) — bimodal distribution from Economy/Business split
+- **QQ plot** shows systematic tail departure — OLS cannot capture pricing discontinuities between class tiers
 
----
-
-### Correlation Heatmap
-
-![Pearson correlation heatmap of all numeric and label-encoded features against price](/plots/heatmap_class.png)
-After label encoding all categorical columns, `class` emerges as the dominant price predictor, followed by
-`duration` and `days_left`. The negative correlation on `days_left` confirms the expected booking dynamic:
-tickets purchased further in advance trend cheaper, while last-minute fares spike sharply.
+**Recommendation:** Gradient boosting models (XGBoost, LightGBM) are the natural next step for handling categorical price jumps and interaction effects between `class` and `airline`.
 
 ---
 
-## Modeling
+## Tech Stack
 
-A **Linear Regression** model was trained on an 80/20 stratified split across 9 features after label-encoding
-all categorical variables via `sklearn.preprocessing.LabelEncoder`.
-
-**Features used:**
-`airline`, `source_city`, `destination_city`, `departure_time`, `arrival_time`, `stops`, `class`, `duration`, `days_left`
-
-### Results
-
-| Metric | Train | Test |
-|---|---:|---:|
-| R² Score | — | — |
-| MAE | — | — |
-| RMSE | — | — |
-
-> *Update with actual output values from notebook run.*
+| Layer | Technology |
+|-------|-----------|
+| Language | Python 3.8+ |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn, Plotly |
+| ML Framework | scikit-learn, XGBoost, CatBoost, LightGBM |
+| Development | Jupyter Notebook, VS Code |
+| Version Control | Git, GitHub |
+| License | MIT |
 
 ---
 
-## Residual Analysis
+## Impact
 
-### Residual Plot — Linear Regression
-
-![Scatter plot of residuals vs predicted price showing heteroscedasticity in Linear Regression](/plots/Residual%20Plot%20-%20Linear%20Regression.png)
-The residual plot shows a clear **fan shape** — variance increases with predicted price. This heteroscedasticity
-is a known limitation of linear models on price data: the model handles mid-range fares reasonably but
-systematically underestimates variance on premium Business class tickets where pricing is more non-linear.
-
----
-
-### Residual Distribution
-
-![Histogram of residuals with KDE overlay showing non-normal distribution](/plots/histogram-residual.png)
-The residual histogram deviates from a normal bell curve, with a heavy right tail driven by high-value Business
-class prediction errors. Combined with the Shapiro-Wilk test rejecting normality (p < 0.05), this confirms
-that OLS assumptions are not fully satisfied on this dataset.
-
----
-
-### QQ Plot of Residuals
-
-![QQ plot of residuals showing departure from the diagonal normal reference line](/plots/qq%20plots%20of%20residual.png)
-The QQ plot shows systematic departure from the diagonal at both tails — characteristic of a distribution
-with heavier-than-normal tails. This is expected given the bimodal price structure (Economy vs. Business)
-which OLS cannot fully decompose without explicit interaction terms.
-
----
-
-## Key Takeaways
-
-Linear Regression establishes a useful baseline but hits a structural ceiling on this dataset. The bimodal
-price distribution (Economy vs. Business class) introduces non-linearity that OLS cannot fully capture,
-as evidenced by the fan-shaped residuals and non-normal QQ plot.
-
-Gradient boosting models — XGBoost, LightGBM — are the natural next step, given their ability to handle
-categorical price discontinuities between class tiers without assuming constant variance. The `days_left`
-and `class` features are the highest-leverage inputs for further feature engineering: booking window segments
-and interaction terms between class and airline would likely yield meaningful R² improvements over the
-linear baseline.
+Demonstrates systematic data-to-insight workflow on a large real-world pricing dataset. The bimodal price structure (Economy vs. Business) and heteroscedastic residuals reveal the limitations of linear models on airline pricing — establishing a clear path toward ensemble methods for production-grade price prediction.
