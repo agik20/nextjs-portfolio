@@ -2,77 +2,254 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Warm editorial palette */
-  --color-cream: #f2ece4;
-  --color-cream-light: #f7f3ee;
+  /* Rich editorial palette */
+  --color-cream: #f5f0e8;
+  --color-cream-dark: #e8e0d0;
   --color-paper: #ffffff;
-  --color-ink: #1a1a1a;
-  --color-charcoal: #2c2c2c;
-  --color-sage: #6b6560;
-  --color-mist: #c4bdb5;
-  --color-stone: #e8e2da;
-  --color-dark-bg: #1c1a17;
+  --color-ink: #0a0a0a;
+  --color-charcoal: #1a1a1a;
+  --color-sage: #5a5548;
+  --color-mist: #b8b0a5;
+  --color-stone: #d4cec4;
+  --color-gold: #c9a962;
+  --color-dark: #0d0d0d;
+  --color-warm-gray: #3a3530;
 
-  /* Typography */
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  /* Typography scale */
+  --text-hero: clamp(3rem, 8vw, 8rem);
+  --text-display: clamp(2rem, 5vw, 5rem);
+  --text-section: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
   html {
-    scroll-behavior: smooth;
+    cursor: none;
+  }
+
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth-scrolling {
+    overflow: hidden;
   }
 
   body {
-    font-family: var(--font-sans);
-    color: var(--color-charcoal);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    color: var(--color-ink);
     background-color: var(--color-cream);
-    line-height: 1.75;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
-    font-weight: 400;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
     color: var(--color-ink);
-    line-height: 1.1;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
   }
 
-  ::placeholder {
-    color: var(--color-sage);
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-paper);
+  }
+
+  /* Custom cursor */
+  .cursor-dot,
+  .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-ink);
+  }
+
+  .cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-ink);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+  }
+
+  .cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+    background: rgba(201, 169, 98, 0.1);
+    border-color: var(--color-gold);
   }
 }
 
 @layer components {
-  .section-label {
-    @apply text-[10px] tracking-[0.25em] uppercase text-sage;
-    font-family: var(--font-sans);
+  /* Typography */
+  .text-hero {
+    font-size: var(--text-hero);
   }
 
-  .section-divider {
-    @apply h-px bg-mist w-12;
+  .text-display {
+    font-size: var(--text-display);
   }
 
-  .editorial-link {
-    @apply text-ink hover:text-sage transition-colors duration-300 underline underline-offset-4 decoration-mist hover:decoration-ink;
-    font-family: var(--font-sans);
+  .text-section {
+    font-size: var(--text-section);
   }
 
-  .btn-outline {
-    @apply px-6 py-3 border border-ink text-ink text-xs tracking-widest uppercase hover:bg-ink hover:text-paper transition-all duration-300;
-    font-family: var(--font-sans);
+  /* Utility classes */
+  .line-through-text {
+    text-decoration: line-through;
+    text-decoration-color: var(--color-mist);
+  }
+
+  .mix-blend-difference {
+    mix-blend-mode: difference;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply px-8 py-4 bg-ink text-paper text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-all duration-500 font-medium;
+  }
+
+  .btn-outline-large {
+    @apply px-10 py-5 border-2 border-ink text-ink text-xs tracking-[0.2em] uppercase hover:bg-ink hover:text-paper transition-all duration-500;
   }
 
   .btn-filled {
-    @apply px-6 py-3 bg-ink text-paper text-xs tracking-widest uppercase hover:bg-charcoal transition-all duration-300;
-    font-family: var(--font-sans);
+    @apply px-6 py-3 bg-ink text-paper text-xs tracking-[0.2em] uppercase hover:bg-gold hover:text-ink transition-all duration-300;
   }
 
-  .input-underline {
-    @apply w-full bg-transparent border-0 border-b border-mist py-3 text-ink outline-none focus:border-ink transition-colors duration-300;
-    font-family: var(--font-sans);
+  .btn-outline {
+    @apply px-6 py-3 border border-ink text-ink text-xs tracking-[0.2em] uppercase hover:bg-ink hover:text-paper transition-all duration-300;
+  }
+
+  /* Section styling */
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .section-label {
+    @apply text-[10px] tracking-[0.4em] uppercase text-sage mb-4;
+  }
+
+  .section-divider {
+    @apply h-px bg-stone/40 w-full;
+  }
+
+  .bg-dark-bg {
+    background-color: var(--color-dark);
+  }
+
+  .bg-cream-light {
+    background-color: var(--color-cream);
+  }
+
+  .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  /* Image treatments */
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+
+  /* Marquee animation */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Reveal animation */
+  @keyframes revealUp {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .reveal-up {
+    animation: revealUp 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-sage) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Horizontal rule */
+  .hr-thin {
+    @apply h-px bg-gradient-to-r from-transparent via-mist to-transparent;
+  }
+
+  .hr-bold {
+    @apply h-px bg-ink;
+  }
+}
+
+/* Film grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Vignette overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9996;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.25) 100%);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }

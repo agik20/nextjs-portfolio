@@ -1,26 +1,27 @@
 "use client";
+
 import {
-  AboutSection,
+  HeroSection,
+  MarqueeSection,
+  AboutNewSection,
+  SkillsNewSection,
+  ProjectsSection,
   ContactSection,
   FooterSection,
-  HeaderSection,
-  LearningSection,
-  NavbarSection,
-  ProjectSection,
-  SkillsSection,
 } from "@/src/features/home/sections";
+import ChapterNav from "@/app/components/ChapterNav";
 
 export default function Home() {
   return (
     <>
-      <NavbarSection />
-      <HeaderSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectSection />
-      <LearningSection />
+      <HeroSection />
+      <MarqueeSection />
+      <AboutNewSection />
+      <SkillsNewSection />
+      <ProjectsSection />
       <ContactSection />
       <FooterSection />
+      <ChapterNav />
     </>
   );
 }

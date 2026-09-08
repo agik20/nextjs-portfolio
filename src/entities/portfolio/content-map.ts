@@ -4,7 +4,6 @@ export const projectContentMap: Record<string, string> = {
   "california-housing-prices": "projects/california-housing-prices.md",
   "lab-activity-recognition": "projects/lab-activity-recognition.md",
   "finance-tracker-app": "projects/finance-tracker-app.md",
-  "nextjs-portfolio": "projects/nextjs-portfolio.md",
 };
 
 export const learningContentMap: Record<string, string> = {

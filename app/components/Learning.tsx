@@ -14,13 +14,19 @@ const Learning = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Label */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const }}
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-16 md:mb-24"
           >
-            <span className="section-divider" />
+            <motion.span
+              className="section-divider"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            />
             <span className="section-label">Journal</span>
           </motion.div>
 
@@ -61,9 +67,10 @@ const Learning = () => {
                 <motion.div
                   initial={{ opacity: 0, x: -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-8 md:p-10 hover:bg-cream-light transition-colors duration-300"
+                  whileHover={{ backgroundColor: "rgb(247, 243, 238)" }}
+                  className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-8 md:p-10 transition-colors duration-300"
                 >
                   {/* Thumbnail */}
                   <div className="w-full sm:w-48 h-32 relative shrink-0 overflow-hidden">
@@ -94,9 +101,12 @@ const Learning = () => {
                     <span>{material.duration}</span>
                     <span className="hidden sm:inline text-stone">·</span>
                     <span className="hidden sm:inline">{material.level}</span>
-                    <span className="text-ink text-lg group-hover:translate-x-1 transition-transform duration-300">
+                    <motion.span
+                      className="text-ink text-lg"
+                      whileHover={{ x: 3 }}
+                    >
                       →
-                    </span>
+                    </motion.span>
                   </div>
                 </motion.div>
               </Link>
@@ -111,9 +121,14 @@ const Learning = () => {
             viewport={{ once: true }}
             className="flex justify-center mt-16"
           >
-            <a href="#contact" className="btn-outline">
+            <motion.a
+              href="#contact"
+              className="btn-outline"
+              whileHover={{ x: 3 }}
+              whileTap={{ scale: 0.98 }}
+            >
               Suggest a Topic
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </div>

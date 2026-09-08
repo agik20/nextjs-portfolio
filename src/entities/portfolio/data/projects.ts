@@ -7,7 +7,7 @@ export const projectData: PortfolioProject[] = [
     description: "Aug 2024 - Jul 2025",
     category: "Computer Vision & AI",
     status: "Completed",
-    bgImage: "/exam-cheating.png",
+    bgImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c802eb?w=1200&q=80",
     link: "https://github.com/agik20/Exam-Cheating",
     technologies: ["YOLOv8", "PyTorch", "TensorRT", "OpenCV", "ALBumentations", "Flask"],
     features: [
@@ -27,7 +27,7 @@ export const projectData: PortfolioProject[] = [
     description: "Nov 2025 - May 2026",
     category: "AI Engineering & NLP",
     status: "Completed",
-    bgImage: "/cmdb.png",
+    bgImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
     link: "https://github.com/agik20/cmdb-ai-chatbot",
     technologies: ["Python", "FastAPI", "Groq", "Qdrant", "Transformers", "Tailwind CSS"],
     features: [
@@ -47,7 +47,7 @@ export const projectData: PortfolioProject[] = [
     description: "Aug 2025 - Present",
     category: "Data Science & Machine Learning",
     status: "Completed",
-    bgImage: "/work-3.png",
+    bgImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
     link: "https://github.com/agik20/californiahousinprice",
     technologies: ["Python", "XGBoost", "CatBoost", "LightGBM", "Flask", "Docker"],
     features: [
@@ -67,7 +67,7 @@ export const projectData: PortfolioProject[] = [
     description: "Jun 2025 - Oct 2025",
     category: "Computer Vision & AI",
     status: "Completed",
-    bgImage: "/work-1.png",
+    bgImage: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=1200&q=80",
     link: "https://github.com/agik20/yolov8-lab-activity",
     technologies: ["YOLOv8", "PyTorch", "OpenCV", "ALBumentations", "Flask", "scikit-learn"],
     features: [
@@ -87,7 +87,7 @@ export const projectData: PortfolioProject[] = [
     description: "Jul 2025 - Sep 2025",
     category: "Full-stack Web Development",
     status: "Completed",
-    bgImage: "/work-2.png",
+    bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
     link: "https://github.com/agik20/finance-tracker-app",
     technologies: ["React 18", "TypeScript", "Tailwind CSS", "shadcn/ui", "Recharts", "Vite"],
     features: [
@@ -107,7 +107,7 @@ export const projectData: PortfolioProject[] = [
     description: "Aug 2025 - Present",
     category: "Web Development & Design",
     status: "In Progress",
-    bgImage: "/uiux.png",
+    bgImage: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80",
     link: "https://github.com/agik20/nextjs-portfolio",
     technologies: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Framer Motion"],
     features: [

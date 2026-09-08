@@ -1,11 +1,7 @@
-import {
-  assets,
-} from "@/assets/assets";
 import { learningMaterialData } from "./data/learning";
-import { getCurrentYearValue, socialLinkData, toolAssetKeys } from "./data/meta";
+import { getCurrentYearValue, socialLinkData } from "./data/meta";
 import { projectData } from "./data/projects";
-import { serviceCapabilityData } from "./data/services";
-import type { LearningMaterial, PortfolioProject, ServiceCapability } from "./types";
+import type { LearningMaterial, PortfolioProject } from "./types";
 
 export function getProjects(): PortfolioProject[] {
   return projectData;
@@ -21,21 +17,6 @@ export function getLearningMaterials(): LearningMaterial[] {
 
 export function getLearningMaterialBySlug(slug: string): LearningMaterial | undefined {
   return getLearningMaterials().find((material) => material.slug === slug);
-}
-
-export function getServiceCapabilities(): ServiceCapability[] {
-  return serviceCapabilityData.map((item) => ({
-    ...item,
-    icon: assets[item.iconKey],
-  }));
-}
-
-export function getPortfolioAssets() {
-  return assets;
-}
-
-export function getToolIcons() {
-  return toolAssetKeys.map((key) => assets[key]);
 }
 
 export function getSocialLinks() {

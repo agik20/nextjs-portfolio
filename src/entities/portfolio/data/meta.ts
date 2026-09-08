@@ -1,7 +1,3 @@
-import { toolIconKeys } from "../asset-keys";
-
-export const toolAssetKeys = toolIconKeys;
-
 export const socialLinkData = [
   { name: "Instagram", url: "https://www.instagram.com/ar.giii" },
   { name: "Github", url: "https://github.com/agik20" },

@@ -1,25 +1,45 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import nextPlugin from "@next/eslint-plugin-next";
+import tseslint from "typescript-eslint";
+import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+export default tseslint.config(
   {
     ignores: [
       "node_modules/**",
       ".next/**",
       "out/**",
       "build/**",
+      "eslint.config.mjs",
       "next-env.d.ts",
     ],
   },
-];
-
-export default eslintConfig;
+  {
+    ...reactPlugin.configs.flat["react-refresh"],
+    ...reactPlugin.configs.flat.recommended,
+    settings: { react: { version: "19.0" } },
+    rules: {
+      "react/react-in-jsx-scope": "off",
+    },
+  },
+  {
+    plugins: {
+      "@next/next": nextPlugin,
+      "react-hooks": reactHooksPlugin,
+    },
+    rules: {
+      "@next/next/no-html-link-for-pages": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/no-unknown-property": ["error", { ignore: ["attach", "args", "transparent"] }],
+    },
+  },
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    extends: [...tseslint.configs.recommended],
+    rules: {
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/no-explicit-any": "warn",
+    },
+  }
+);

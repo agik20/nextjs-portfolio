@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import LayoutClient from "@/app/components/LayoutClient";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,9 +14,9 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className="font-sans antialiased bg-cream text-charcoal">
-        {children}
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );

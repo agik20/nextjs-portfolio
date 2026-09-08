@@ -1,0 +1,18 @@
+export const toolsData = [
+  { name: 'python', label: 'Python', src: '/icons/python.svg' },
+  { name: 'pytorch', label: 'PyTorch', src: '/icons/pytorch.svg' },
+  { name: 'opencv', label: 'OpenCV', src: '/icons/opencv.svg' },
+  { name: 'scikit_learn', label: 'Scikit-learn', src: '/icons/scikitlearn.svg' },
+  { name: 'flask', label: 'Flask', src: '/icons/flask.svg' },
+  { name: 'fastapi', label: 'FastAPI', src: '/icons/fastapi.svg' },
+  { name: 'docker', label: 'Docker', src: '/icons/docker.svg' },
+  { name: 'git', label: 'Git', src: '/icons/git.svg' },
+  { name: 'github', label: 'GitHub', src: '/icons/github.svg' },
+  { name: 'jupyter', label: 'Jupyter', src: '/icons/jupyter.svg' },
+  { name: 'anaconda', label: 'Anaconda', src: '/icons/anaconda.svg' },
+  { name: 'react', label: 'React', src: '/icons/react.svg' },
+  { name: 'figma', label: 'Figma', src: '/icons/figma.svg' },
+  { name: 'mongodb', label: 'MongoDB', src: '/icons/mongodb.svg' },
+  { name: 'elasticsearch', label: 'Elasticsearch', src: '/icons/elasticsearch.svg' },
+  { name: 'huggingface', label: 'Hugging Face', src: '/icons/huggingface.svg' },
+] as const;

@@ -2,94 +2,110 @@
 
 import { getCurrentYear, getSocialLinks } from '@/src/entities/portfolio/repository';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
   const socialLinks = getSocialLinks();
   const currentYear = getCurrentYear();
+  const pathname = usePathname();
 
-  const navigation = [
-    { name: 'Home', href: '#top' },
-    { name: 'About', href: '#about' },
-    { name: 'Work', href: '#project' },
-    { name: 'Journal', href: '#learning' },
-    { name: 'Contact', href: '#contact' },
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Work', href: '/work' },
+    { name: 'Skills', href: '/skills' },
+    { name: 'Contact', href: '/contact' },
   ];
 
-  return (
-    <footer className="bg-dark-bg text-paper">
-      <div className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        <div className="max-w-7xl mx-auto">
-          {/* Top — Name + Description */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <h3 className="text-4xl md:text-5xl font-serif font-light text-paper mb-6">
-              Ardutra
-              <span className="text-stone"> Agi Ginting</span>
-            </h3>
-            <p className="text-sm text-stone max-w-md leading-relaxed mb-8">
-              Data Scientist & AI Engineer specializing in computer vision, ML pipelines,
-              and RAG systems. Building intelligent solutions that solve real-world problems.
-            </p>
-            <div className="flex items-center gap-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-paper animate-pulse" />
-              <span className="text-[10px] tracking-[0.2em] uppercase text-stone">
-                Available for opportunities
-              </span>
-            </div>
-          </motion.div>
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+  };
 
-          {/* Middle — Navigation + Social */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+  return (
+    <footer className="bg-[#f5f0e8] border-t border-[#b8b0a5]/30">
+      <div className="px-6 md:px-12 lg:px-20 py-16 md:py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            {/* Brand */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="lg:col-span-1"
+            >
+              <h3 className="text-2xl font-serif font-light text-[#0a0a0a] mb-4">
+                A<span className="text-[#5a5548]">.</span>A<span className="text-[#5a5548]">.</span>
+              </h3>
+              <p className="text-sm text-[#5a5548] leading-relaxed mb-6">
+                Data Scientist & AI Engineer specializing in computer vision, ML pipelines,
+                and RAG systems.
+              </p>
+              <div className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c9a962]" />
+                <span className="text-[10px] tracking-[0.2em] uppercase text-[#b8b0a5]">
+                  Available for opportunities
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Navigation */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="lg:col-span-4"
+              className="lg:col-span-1"
             >
-              <p className="section-label text-stone mb-6">Navigate</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-[#b8b0a5] mb-6">Navigate</p>
               <nav className="space-y-3">
-                {navigation.map((item) => (
-                  <a
+                {navItems.map((item) => (
+                  <Link
                     key={item.name}
                     href={item.href}
-                    className="block text-sm text-stone hover:text-paper transition-colors duration-300"
+                    className={`block text-sm transition-colors duration-300 ${
+                      isActive(item.href)
+                        ? 'text-[#0a0a0a]'
+                        : 'text-[#5a5548] hover:text-[#0a0a0a]'
+                    }`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </motion.div>
 
+            {/* Contact */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="lg:col-span-4"
+              className="lg:col-span-1"
             >
-              <p className="section-label text-stone mb-6">Contact</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-[#b8b0a5] mb-6">Contact</p>
               <div className="space-y-3">
-                <a href="mailto:ardutraa40@gmail.com" className="block text-sm text-stone hover:text-paper transition-colors">
+                <Link
+                  href="mailto:ardutraa40@gmail.com"
+                  className="block text-sm text-[#5a5548] hover:text-[#0a0a0a] transition-colors"
+                >
                   ardutraa40@gmail.com
-                </a>
-                <p className="text-sm text-stone">Jakarta, Indonesia</p>
+                </Link>
+                <p className="text-sm text-[#5a5548]">Jakarta, Indonesia</p>
               </div>
             </motion.div>
 
+            {/* Social */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="lg:col-span-4"
+              className="lg:col-span-1"
             >
-              <p className="section-label text-stone mb-6">Social</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-[#b8b0a5] mb-6">Social</p>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
                   <a
@@ -97,7 +113,7 @@ const Footer = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs tracking-wider uppercase text-stone hover:text-paper transition-colors"
+                    className="text-xs tracking-wider uppercase text-[#5a5548] hover:text-[#0a0a0a] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -107,32 +123,14 @@ const Footer = () => {
           </div>
 
           {/* Divider */}
-          <motion.div
-            className="h-px bg-stone/40 mb-12"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            viewport={{ once: true }}
-          />
+          <div className="h-px bg-[#b8b0a5]/30 mb-8" />
 
           {/* Bottom */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row items-center justify-between gap-4"
-          >
-            <p className="text-xs text-stone/60">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-[#b8b0a5]">
               © {currentYear} Ardutra Agi Ginting. All rights reserved.
             </p>
-            <a
-              href="#top"
-              className="text-xs text-stone/60 hover:text-paper transition-colors tracking-wider uppercase"
-            >
-              Back to top ↑
-            </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </footer>
