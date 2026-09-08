@@ -20,8 +20,19 @@ const CHAPTERS: ChapterDot[] = [
   { id: "contact", label: "Contact", chapter: "CH. V" },
 ];
 
+const DARK_SECTIONS = new Set(["about", "skills", "work"]);
+
+const SECTION_TEXT_COLORS: Record<string, string> = {
+  top: "text-ink",
+  about: "text-paper",
+  skills: "text-paper",
+  work: "text-paper",
+  contact: "text-ink",
+};
+
 export default function ChapterNav() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [textColor, setTextColor] = useState("text-ink");
 
   useEffect(() => {
     CHAPTERS.forEach((ch, i) => {
@@ -32,8 +43,14 @@ export default function ChapterNav() {
         trigger: el,
         start: "top center",
         end: "bottom center",
-        onEnter: () => setActiveIndex(i),
-        onEnterBack: () => setActiveIndex(i),
+        onEnter: () => {
+          setActiveIndex(i);
+          setTextColor(DARK_SECTIONS.has(ch.id) ? "text-paper" : "text-ink");
+        },
+        onEnterBack: () => {
+          setActiveIndex(i);
+          setTextColor(DARK_SECTIONS.has(ch.id) ? "text-paper" : "text-ink");
+        },
       });
     });
 
@@ -54,7 +71,7 @@ export default function ChapterNav() {
           }}
         >
           <span
-            className={`text-[9px] tracking-[0.15em] uppercase text-paper opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap ${
+            className={`text-[9px] tracking-[0.15em] uppercase ${textColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap ${
               i === activeIndex ? "opacity-60" : ""
             }`}
           >
