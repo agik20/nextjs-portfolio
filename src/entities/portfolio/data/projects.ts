@@ -7,7 +7,7 @@ export const projectData: PortfolioProject[] = [
     description: "Aug 2024 - Jul 2025",
     category: "Computer Vision & AI",
     status: "Completed",
-    bgImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c802eb?w=1200&q=80",
+    bgImage: "/exam-cheating.png",
     link: "https://github.com/agik20/Exam-Cheating",
     technologies: ["YOLOv8", "PyTorch", "TensorRT", "OpenCV", "ALBumentations", "Flask"],
     features: [
