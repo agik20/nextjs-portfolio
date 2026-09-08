@@ -54,7 +54,7 @@ export default function ChapterNav() {
           }}
         >
           <span
-            className={`text-[9px] tracking-[0.15em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap ${
+            className={`text-[9px] tracking-[0.15em] uppercase text-paper opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap ${
               i === activeIndex ? "opacity-60" : ""
             }`}
           >
